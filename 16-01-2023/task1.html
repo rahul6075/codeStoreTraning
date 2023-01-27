@@ -1,0 +1,222 @@
+<!-- HTML BOILERPLATE -->
+
+<!-- Document Defination ::  Used to define document type.With the help of this browser render the webpage in standered mode-->
+<!DOCTYPE html>
+<!-- Starting or Root Tag:: "lang" attribute define language for document. We can also use 'lang' with any element for differnt language in web page-->
+<html lang="en">
+  <!-- Head Section Start :: Collection meta data(Properties of Web Page) of doc.-->
+  <head>
+    <!-- Encoding Method -->
+    <meta charset="UTF-8" />
+    <!-- It allows to choose internet Explorer browser version."http-equiv" use to make http request according to content given    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- "viewport" help to view document with differnt screen size devices properly -->
+    <meta
+      name="viewport"
+      content="About html boilerplate info"
+      ,
+      initial-scale="1.0"
+    />
+    <!-- Description -->
+    <meta name="description" content="CodeStore Tainging Modules" />
+    <!-- It shows the title of webpage in browser. Also web age searched with this title (!Important for SEO). -->
+    <title>Html Task1- 16 Jan 2023</title>
+    <style>
+      table {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      table,
+      th,
+      td {
+        border-top: 1px solid#eee;
+        border-bottom: 1px solid#eee;
+        border-collapse: collapse;
+        padding: 10px 5px;
+      }
+      table,
+      tr {
+        padding: 10px 5px;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+      }
+      .container {
+        max-width: 60%;
+        margin: 0 auto;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .form-control {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 20rem;
+        margin: 15px auto;
+        padding: 25px 15px;
+        border: 1px solid#eee;
+        border-radius: 5px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      .form-item {
+        display: flex;
+        flex-direction: column;
+        padding: 6px 0px;
+      }
+      .label {
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        padding: 2px 5;
+        margin: 2px 6px;
+      }
+      .radio-inputs {
+        display: flex;
+        padding: 8px 0;
+      }
+      .form-item > input {
+        border: none;
+        outline: none;
+        background-color: #eee;
+        padding: 5px 15px;
+        border-radius: 25px;
+      }
+      .form_submit {
+        width: 40%;
+        border: none;
+        padding: 5px 10px;
+        background-color: teal;
+        color: white;
+      }
+      .user_table{
+          margin: 15px auto;
+      }
+    </style>
+  </head>
+  <!-- Head Section Ends -->
+  <!-- Body Tag :: Content of html document will be written here. -->
+  <body>
+    <main class="container">
+      <h1 class="text-center">HTML Form Demonstration</h1>
+      <!-- Create Html Form -->
+      <form
+        method="post"
+        class="form-control"
+        id="task-from"
+      >
+        <div class="form-item">
+          <label for="first_name" class="label">First Name</label>
+          <input
+            type="text"
+            id="first_name"
+            name="first_name"
+            class="form-input"
+          />
+        </div>
+        <div class="form-item">
+          <label for="last_name" class="label">Last Name</label>
+          <input
+            type="text"
+            id="last_name"
+            name="last_name"
+            class="form-input"
+          />
+        </div>
+        <div class="form-item">
+          <label for="Age" class="label">Age</label>
+          <input type="number" id="Age" name="age" class="form-input" />
+        </div>
+        <div class="form-item" class="label">
+          <label>Gender</label>
+          <div class="radio-inputs">
+            <input type="radio" id="male" name="male" />
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="female" />
+            <label for="female">Female</label>
+          </div>
+        </div>
+        <button type="submit" class="form_submit" id="submit">Submit</button>
+      </form>
+      <!-- form Ends Here -->
+
+      <!-- create Table Render users -->
+      <div class="container" id="user_table">
+        <p class="text-center">User Data Table</p>
+        <button type="button" class="form_submit" id="show_btn" onclick="showData()">
+          showData
+        </button>
+        <table style="width: 100%">
+            <thead>
+                <tr class="heading">
+                    <th>Sr No.</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                  </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+      </div>
+    </main>
+    <script>
+      const form = document.forms[0];
+      const user_data = [];
+      let count = 0;
+      const table = document.querySelector("#user_table");
+      const showbtn = document.querySelector("#show_btn");
+      
+      // Form Handler funtion
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        // contruct Data Object
+        let first_name = formData.get("first_name");
+        let last_name = formData.get("last_name");
+        let age = formData.get("age");
+        let male = formData.get("male");
+        let female = formData.get("female");
+        if(!first_name || !last_name || !age || (!male && !female)){
+            alert("Please fill the whole form..");
+            return;
+        }
+        const obj = {
+          id: count++,
+          first_name: first_name,
+          last_name: last_name,
+          age: age,
+          gender: !male ? "female" : "male",
+        };
+        user_data.push(obj);
+        // Save user data into local Storage
+        localStorage.setItem("data", JSON.stringify(user_data));
+        alert("User Added Successfully");
+        form.reset();
+      });
+     // Show data btn Eventlistener
+      showbtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        tableData();
+      });
+        
+      // Render Table 
+      var tableData = () => {
+        const data = JSON.parse(localStorage.getItem("data"));
+        const tablebody = document.getElementById("table-body");
+        console.log("Rendered Data", data);
+        tablebody.innerHTML = data
+          .map((item) => {
+            return `
+            <tr>
+              <td>${item.id}</td>
+              <td>${item.first_name}</td>
+              <td>${item.last_name}</td>
+              <td>${item.age}</td>
+              <td>${item.gender}</td>
+            </tr>
+            `;
+          })
+          .join("");
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,289 @@
+<!-- HTML BOILERPLATE -->
+<!-- Document Defination ::  Used to define document type.With the help of this browser render the webpage in standered mode-->
+<!DOCTYPE html>
+<!-- Starting or Root Tag:: "lang" attribute define language for document. We can also use 'lang' with any element for differnt language in web page-->
+<html lang="en">
+  <!-- Head Section Start :: Collection meta data(Properties of Web Page) of doc.-->
+  <head>
+    <!-- Encoding Method -->
+    <meta charset="UTF-8" />
+    <!-- It allows to choose internet Explorer browser version."http-equiv" use to make http request according to content given    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- "viewport" help to view document with differnt screen size devices properly -->
+    <meta
+      name="viewport"
+      content="About html boilerplate info"
+      ,
+      initial-scale="1.0"
+    />
+    <!-- fontawesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+      integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Description -->
+    <meta name="description" content="CodeStore Tainging Modules" />
+    <!-- Adding CSS FILE -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- It shows the title of webpage in browser. Also web age searched with this title (!Important for SEO). -->
+    <title>Html Task3- 18 Jan 2023</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Hind", sans-serif;
+      }
+    </style>
+  </head>
+  <!-- Head Section Ends -->
+  <!-- Body Tag :: Content of html document will be written here. -->
+  <body data-spy="scroll" data-target="#navbar" data-offset="50">
+    <main class="container">
+      <!-- Header Section  -->
+      <header>
+        <nav id="navbar">
+          <div class="nav-left">
+            <div class="logo">
+              <span><i class="fa-solid fa-code"></i>HashCode</span>
+            </div>
+          </div>
+          <div class="nav-center">
+            <ul class="nav-items">
+              <li class="nav-item"><a href="/">Home</a></li>
+              <li class="nav-item"><a href="../feed/Feed.html">Feed</a></li>
+              <li class="nav-item"><a href="#blog-gallery">Top Blogs</a></li>
+              <li class="nav-item"><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="nav-right">
+            <span class="btn"
+              ><i class="fa-solid fa-circle-user"></i
+              ><a href="../auth/Auth.html">SignIn</a>
+              <i class="fas fa-bars menu" onclick="toggleMenu()"></i>
+            </span>
+          </div>
+        </nav>
+      </header>
+      <!-- Carousel Section  -->
+      <section id="carousel">
+        <!-- Single Silde -->
+        <div class="slide fade">
+          <div class="bg-img">
+            <img src="./assets/feed3.svg" alt="" />
+          </div>
+          <div class="slide-content">
+            <h1 class="heading">Expand Your Knowledge</h1>
+            <h3 class="sub-heading">
+              You can just type your quote into a post and put it in quotation
+              marks, but to really make it stand out and break up your text, try
+              a quote block.
+            </h3>
+            <button class="slide-btn">
+              <a href="../feed/Feed.html">Read More...</a>
+            </button>
+          </div>
+        </div>
+
+        <!-- Arrow Btns -->
+        <div class="prev">
+          <span onclick="nextSlide(-1)"><i class="fa fa-arrow-left"></i></span>
+        </div>
+        <div class="next">
+          <span onclick="nextSlide(1)"><i class="fa fa-arrow-right"></i></span>
+        </div>
+        <!-- Svg Divider -->
+        <img src="./assets/wavesNegative.svg" alt="" srcset="" />
+      </section>
+      <!-- Top  Content -->
+      <h1 class="text-center pd-3"><a href=""> Popular Post's</a></h1>
+      <section id="blog-gallery">
+        <div class="blog-container">
+          <div class="blog-card">
+            <img src="./assets/assets/img5.jpg" alt="" />
+            <div class="card-content">
+              <span class="tag">Blog Tag</span>
+              <h4>Learn Docker</h4>
+              <span class="blog-desc">
+                Docker is an open source platform that enables developers to
+                build, deploy, run containers.
+              </span>
+              <div class="blog-auther">
+                <img src="./assets/card3.png" alt="" srcset="" />
+                <h4>Mridul Talwar</h4>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <img src="./assets/assets/img1.jpg" alt="" />
+            <div class="card-content">
+              <span class="tag">Blog Tag</span>
+              <h4>Learn Docker</h4>
+              <span class="blog-desc">
+                Docker is an open source platform that enables developers to
+                build, deploy, run containers.
+              </span>
+              <div class="blog-auther">
+                <img src="./assets/card3.png" alt="" srcset="" />
+                <h4>Mridul Talwar</h4>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <img src="./assets/assets/img1.jpg" alt="" />
+            <div class="card-content">
+              <span class="tag">Blog Tag</span>
+              <h4>Learn Docker</h4>
+              <span class="blog-desc">
+                Docker is an open source platform that enables developers to
+                build, deploy, run containers.
+              </span>
+              <div class="blog-auther">
+                <img src="./assets/card3.png" alt="" srcset="" />
+                <h4>Mridul Talwar</h4>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <img src="./assets/assets/img1.jpg" alt="" />
+            <div class="card-content">
+              <span class="tag">Blog Tag</span>
+              <h4>Learn Docker</h4>
+              <span class="blog-desc">
+                Docker is an open source platform that enables developers to
+                build, deploy, run containers.
+              </span>
+              <div class="blog-auther">
+                <img src="./assets/card3.png" alt="" srcset="" />
+                <h4>Mridul Talwar</h4>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <img src="./assets/assets/img1.jpg" alt="" />
+            <div class="card-content">
+              <span class="tag">Blog Tag</span>
+              <h4>Learn Docker</h4>
+              <span class="blog-desc">
+                Docker is an open source platform that enables developers to
+                build, deploy, run containers.
+              </span>
+              <div class="blog-auther">
+                <img src="./assets/card3.png" alt="" srcset="" />
+                <h4>Mridul Talwar</h4>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <img src="./assets/assets/img1.jpg" alt="" />
+            <div class="card-content">
+              <span class="tag">Blog Tag</span>
+              <h4>Learn Docker</h4>
+              <span class="blog-desc">
+                Docker is an open source platform that enables developers to
+                build, deploy, run containers.
+              </span>
+              <div class="blog-auther">
+                <img src="./assets/card3.png" alt="" srcset="" />
+                <h4>Mridul Talwar</h4>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <img src="./assets/assets/img1.jpg" alt="" />
+            <div class="card-content">
+              <span class="tag">Blog Tag</span>
+              <h4>Learn Docker</h4>
+              <span class="blog-desc">
+                Docker is an open source platform that enables developers to
+                build, deploy, run containers.
+              </span>
+              <div class="blog-auther">
+                <img src="./assets/card3.png" alt="" srcset="" />
+                <h4>Mridul Talwar</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section Ends Here -->
+      <h1 class="text-center pd-3"><a href="">Connect With Us</a></h1>
+      <section id="contact">
+        <div class="left">
+          <form id="form" class="form-container">
+            <div class="form-element">
+              <label for="name" class="required">Name</label>
+              <input type="text" id="name" name="name" />
+            </div>
+            <div class="form-element">
+              <label for="email" class="required">Email</label>
+              <input type="text" id="email" name="email" />
+            </div>
+            <div class="form-element" id="password-element">
+              <label for="password" class="required">Mobile No.</label>
+              <input type="tel" id="password" name="password" />
+            </div>
+            <button type="submit" class="form-submit">
+              <a href="">Submit</a>
+            </button>
+          </form>
+        </div>
+        <div class="right">
+          <h3><a href=""> Fill the Contact Form to Connect Us</a></h3>
+          <p>
+            Network analysis refers to a family of methods that describe
+            relationships between units of analysis. A network is comprised of
+            nodes as well as the edges or connections between them.
+          </p>
+        </div>
+      </section>
+      <!-- Footer Section start -->
+      <footer id="footer">
+        <div class="left">
+          <h3><a href="">More About US</a></h3>
+          <p>
+            A blog (a shortened version of “weblog”) is an online journal or
+            informational website displaying information in reverse
+            chronological order, with the latest posts appearing first, at the
+            top.
+          </p>
+        </div>
+        <div class="center">
+          <h3><a href=""> Keep Connected</a></h3>
+          <div class="social-icons">
+            <span><i class="fab fa-linkedin icon"></i> LinekedIn</span>
+            <span> <i class="fab fa-instagram icon"></i> Instagram</span>
+            <span> <i class="fab fa-twitter icon"></i> twitter</span>
+            <span> <i class="fab fa-facebook icon"></i> Facebook</span>
+          </div>
+        </div>
+        <div class="right">
+          <h3><a href="">Contact Information</a></h3>
+          <div class="social-icons">
+            <p class="info"><i class="fa fa-home"></i> Compnay Name</p>
+            <p class="info"><i class="fa fa-phone"></i>+91 7860965109</p>
+            <p class="info"><i class="fa fa-phone"></i>+91 7860965109</p>
+            <p class="info"><i class="fa fa-phone"></i>+91 7860965109</p>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer Section Ends Here -->
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>

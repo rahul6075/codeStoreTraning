@@ -1,0 +1,15 @@
+/* --- Use universal selector (*) for reset the style of whole html page --- */
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Use Id selector (#) target html element */
+#container {
+  max-width: 60%;
+  margin: 20px auto;
+}
+/* Using class attr to target elements with (.) selector */
+.heading {
+  font-weight: 700;
+  color: teal;
+}

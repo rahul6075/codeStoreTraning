@@ -1,0 +1,78 @@
+<!-- HTML BOILERPLATE -->
+<!-- Document Defination ::  Used to define document type.With the help of this browser render the webpage in standered mode-->
+<!DOCTYPE html>
+<!-- Starting or Root Tag:: "lang" attribute define language for document. We can also use 'lang' with any element for differnt language in web page-->
+<html lang="en">
+  <!-- Head Section Start :: Collection meta data(Properties of Web Page) of doc.-->
+  <head>
+    <!-- Encoding Method -->
+    <meta charset="UTF-8" />
+    <!-- It allows to choose internet Explorer browser version."http-equiv" use to make http request according to content given    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- "viewport" help to view document with differnt screen size devices properly -->
+    <meta
+      name="viewport"
+      content="About html boilerplate info"
+      ,
+      initial-scale="1.0"
+    />
+    <!-- Description -->
+    <meta name="description" content="CodeStore Tainging Modules" />
+    <!-- It shows the title of webpage in browser. Also web age searched with this title (!Important for SEO). -->
+    <title>Html Task- 12 Jan 2023</title>
+  </head>
+  <!-- Head Section Ends -->
+  <!-- Body Tag :: Content of html document will be written here.-->
+  <body>
+    <!-- Exploring Vrious Lists :: Showing list of info with of lists -->
+    <main>
+      <h3>List Demontration</h3>
+      <!-- Unordered List :: Content will be shown without any order with bullet Points-->
+      <section>
+        <h3>Unordered List</h3>
+        <ul>
+          <li>Task1</li>
+          <li>Task2</li>
+          <li>Task3</li>
+          <li>Task4</li>
+          <li>Task5</li>
+        </ul>
+      </section>
+      <!-- Ordered List :: Provide Numbering for info     -->
+      <section>
+        <h3>Ordered List</h3>
+        <!-- type attr (Ex: 1, A, a ,i, I) used to customize ordering of list items -->
+        <ol type="a">
+          <li>Task1</li>
+          <li>Task2</li>
+          <li>Task3</li>
+          <li>Task4</li>
+          <li>Task5</li>
+        </ol>
+      </section>
+      <!-- Description  List :: Provide Numbering for info     -->
+      <section>
+        <h3>Description List</h3>
+        <!-- type attr (Ex: 1, A, a ,i, I) used to customize ordering of list items -->
+        <dl>
+          <dt>Frontend Developer</dt>
+          <dd>-- Working on UI development.</dd>
+          <dt>Backend Developer</dt>
+          <dd>-- Creating and Implementing Business Logic</dd>
+        </dl>
+      </section>
+      <section>
+        <!-- datalist :: List used for predefined Data -->
+        <h3>Data List of Input Options</h3>
+        <input list="options" placeholder="Select Role" />
+        <datalist id="options">
+          <option value="Frontend Developer"></option>
+          <option value="Backend Developer"></option>
+          <option value="Full Stack Engineer"></option>
+          <option value="SDE-1"></option>
+          <option value="SDE-2"></option>
+        </datalist>
+      </section>
+    </main>
+  </body>
+</html>

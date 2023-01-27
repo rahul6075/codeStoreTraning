@@ -1,0 +1,46 @@
+<!-- HTML BOILERPLATE -->
+
+<!-- Document Defination ::  Used to define document type.With the help of this browser render the webpage in standered mode-->
+<!DOCTYPE html>
+<!-- Starting or Root Tag:: "lang" attribute define language for document. We can also use 'lang' with any element for differnt language in web page-->
+<html lang="en">
+  <!-- Head Section Start :: Collection meta data(Properties of Web Page) of doc.-->
+
+  <head>
+    <!-- Encoding Method -->
+    <meta charset="UTF-8" />
+    <!-- It allows to choose internet Explorer browser version."http-equiv" use to make http request according to content given    -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta http-equiv="refresh" content="30" />
+    <!-- "viewport" help to view document with differnt screen size devices properly -->
+    <meta
+      name="viewport"
+      content="About html boilerplate info"
+      ,
+      initial-scale="1.0"
+    />
+    <!-- It shows the title of webpage in browser. Also web age searched with this title (!Important for SEO). -->
+    <title>Html Task- 12 Jan 2023</title>
+  </head>
+  <!-- Head Section Ends -->
+
+  <!-- Body Tag :: Content of html document will be written here. -->
+  <body>
+        <!-- Image Hyper Link Demonstation -->
+        <div>
+          <h1> Task3 - Image Map Demonstatrion</h1>
+             <!-- Create a image map in 3- steps. -->
+              <!-- First Determine Size of image Defined Size: 500 * 332 -->
+                <img src="./assets/image1.png" alt="Demo Img"  width=500 height=274 usemap="#map_demo" />
+              <!-- Cretaing Map Overlay -->
+               <map name="map_demo">
+                  <!-- Define Co-ordinate for object in the image marked  -->
+                   <area shape="rect" coords="140,25,185,110" alt="phone" href="phone.html">
+                   <area shape="rect" coords="220,25,260,90" alt="mouse" href="mouse.html">
+                   <area shape="rect" coords="280,20,360,95" alt="books" href="tea.html">
+                   <area shape="rect" coords="385,10,490,140" alt="books" href="book.html">
+                   <area shape="rect" coords="70,125,180,155" alt="Gogles" href="gogles.html">
+               </map>
+        </div>
+  </body>
+</html>

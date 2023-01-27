@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 60%;
+  margin: 10px auto;
+  background-color: teal;
+}
+.container h1 {
+  color: white;
+  font-size: 20px;
+}/*# sourceMappingURL=style.css.map */

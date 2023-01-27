@@ -1,0 +1,5 @@
+/* --- Use universal selector (*) for reset the style of whole html page --- */
+* {
+  margin: 0;
+  padding: 0;
+}

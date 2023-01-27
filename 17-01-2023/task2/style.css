@@ -1,0 +1,46 @@
+/* To group selectors, separate each selector with a comma */
+/* we can give same css by grouping of html element */
+h1,
+h3,
+p {
+  color: teal;
+  padding: 10px 20px;
+}
+
+/* ----
+Combination Selectors :: 
+descendant selector (space)
+child selector (>)
+adjacent sibling selector (+)
+general sibling selector (~) 
+--- */
+main h1 {
+  color: red;
+}
+/* Child Selector */
+.container > h3 {
+  color: blue;
+}
+/* Adjacent sibling */
+h1 + p {
+  color: grey;
+}
+/* Genral Sibling */
+h1 ~ p {
+  color: yellow;
+}
+
+/* Pesudo Classes (:) :: Used for style in diff state for an elemnt */
+button {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  background-color: teal;
+  color: white;
+}
+
+button:hover {
+  background-color: lightpink;
+  color: black;
+  cursor: pointer;
+}

@@ -1,0 +1,235 @@
+/** Global Scss **/
+$base_color: teal;
+$element_bacground: #eee;
+$box_shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+h1 {
+  font-size: 45px;
+  color: $base_color;
+  letter-spacing: 0.03em;
+}
+h3 {
+  color: $base_color;
+  letter-spacing: 0.03em;
+}
+p {
+  color: $base_color;
+  letter-spacing: 0.05em;
+}
+h2 {
+  text-align: center;
+  margin: 40px 0;
+  letter-spacing: 0.06em;
+  font-size: 25px;
+  color: $base_color;
+}
+/** header scss **/
+header {
+  //   box-shadow: $box_shadow;
+  #navbar {
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 1;
+    .nav-left {
+      float: left;
+      .logo {
+        font-weight: 700;
+        color: $base_color;
+      }
+    }
+    .nav-right {
+      float: right;
+      span {
+        border: 1px solid #eee;
+        padding: 10px 10px;
+        border-radius: 25px;
+        font-weight: 700;
+        color: $base_color;
+        i {
+          height: 10px;
+          width: 10px;
+          line-height: 10px;
+          padding: 12px 12px;
+          background-color: $element_bacground;
+          border-radius: 50%;
+        }
+      }
+      :hover {
+        cursor: pointer;
+      }
+    }
+    .nav-center {
+      ul {
+        li {
+          display: inline;
+          text-decoration: none;
+          padding: 0px 20px;
+          a {
+            text-decoration: none;
+            font-weight: 700;
+            color: $base_color;
+          }
+          a:hover {
+            transition: 300ms;
+            text-decoration: underline;
+          }
+          a:active {
+            color: $element_bacground;
+          }
+        }
+      }
+    }
+  }
+}
+/** home scss **/
+#hero {
+  .hero-container {
+    display: flex;
+    justify-content: space-between;
+    .bg-img {
+      flex: 7;
+      img {
+        width: 100%;
+
+        object-fit: fill;
+      }
+    }
+    .hero-content {
+      flex: 5;
+      text-align: left;
+      margin: auto 20px;
+
+      button {
+        border: none;
+        outline: none;
+        background: $base_color;
+        color: $element_bacground;
+        letter-spacing: 0.06em;
+        font-weight: 700;
+        padding: 5px 10px;
+        border-radius: 25px;
+        margin: 10px auto;
+      }
+      button:hover {
+        cursor: pointer;
+        background: $element_bacground;
+        color: $base_color;
+      }
+    }
+  }
+}
+
+/*** About section ***/
+#about {
+  max-width: 80%;
+  margin: 10px auto;
+
+  .testimonials {
+    display: flex;
+    overflow-x: scroll;
+
+    .test-item {
+      display: flex;
+      flex-direction: column;
+      margin: 0px 10px;
+      img {
+        width: 15vw;
+        height: 15vw;
+        border-radius: 10px;
+        object-fit: fill;
+      }
+    }
+  }
+}
+
+/** Contact **/
+#contact {
+  max-width: 80%;
+  margin: 10px auto;
+  display: flex;
+  .left {
+    flex: 8;
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 10px auto;
+      width: 30vw;
+      box-shadow: $box_shadow;
+      .form-element {
+        display: flex;
+        flex-direction: column;
+        margin: 5px auto;
+        padding: 10px 0;
+        width: 25vw;
+        .required {
+          padding: 3px 0;
+          letter-spacing: 0.04em;
+          font-weight: 700;
+        }
+        /*  Pesudo Element (*) Added After Label */
+        .required::after {
+          content: "*";
+          color: red;
+        }
+        input {
+          border: none;
+          outline: none;
+          border-bottom: 1px solid $base_color;
+          opacity: 0.5;
+          padding: 5px;
+          letter-spacing: 0.05em;
+        }
+      }
+      button {
+        border: none;
+        outline: none;
+        background: $base_color;
+        color: $element_bacground;
+        letter-spacing: 0.06em;
+        font-weight: 700;
+        padding: 5px 10px;
+        border-radius: 25px;
+        margin: 10px auto;
+      }
+      button:hover {
+        cursor: pointer;
+        background: $element_bacground;
+        color: $base_color;
+      }
+    }
+  }
+  .right {
+    flex: 4;
+    margin: auto 0;
+  }
+}
+/** Footer **/
+#footer{
+    background-color: $element_bacground;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    margin-top: 40px;
+    .left{
+        margin: auto 10px;
+        .icon{
+            font-size: 35px;
+            padding: 5px 0 5px 5px;
+            
+        }
+        .icon:hover{
+            color: $base_color;
+        }
+
+    }
+    .center{
+        margin: auto 10px;
+       
+    }
+    .right{
+        margin: auto 10px;
+    }
+}

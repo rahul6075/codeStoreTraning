@@ -1,0 +1,294 @@
+<!-- HTML BOILERPLATE -->
+
+<!-- Document Defination ::  Used to define document type.With the help of this browser render the webpage in standered mode-->
+<!DOCTYPE html>
+<!-- Starting or Root Tag:: "lang" attribute define language for document. We can also use 'lang' with any element for differnt language in web page-->
+<html lang="en">
+  <!-- Head Section Start :: Collection meta data(Properties of Web Page) of doc.-->
+  <head>
+    <!-- Encoding Method -->
+    <meta charset="UTF-8" />
+    <!-- It allows to choose internet Explorer browser version."http-equiv" use to make http request according to content given    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- "viewport" help to view document with differnt screen size devices properly -->
+    <meta
+      name="viewport"
+      content="About html boilerplate info"
+      ,
+      initial-scale="1.0"
+    />
+    <!-- Description -->
+    <meta name="description" content="CodeStore Tainging Modules" />
+    <!-- It shows the title of webpage in browser. Also web age searched with this title (!Important for SEO). -->
+    <title>Html Task1- 16 Jan 2023</title>
+    <style>
+         table {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      table,
+      th,
+      td {
+        border-top: 1px solid#eee;
+        border-bottom: 1px solid#eee;
+        border-collapse: collapse;
+        padding: 10px 5px;
+      }
+      table,
+      tr {
+        padding: 10px 5px;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+      }
+      .container {
+        max-width: 60%;
+        margin: 0 auto;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .form-control {
+        max-width: 60%;
+        margin: 10px auto;
+      }
+      .form-row {
+        display: flex;
+      }
+      .form-item {
+        display: flex;
+        flex-direction: column;
+      }
+      .form-input {
+        margin: 5px 10px;
+        border: none;
+        outline: none;
+        background-color: #eee;
+        padding: 5px 15px;
+        border-radius: 25px;
+        width: 15rem;
+      }
+      .label {
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        padding: 2px 5;
+        margin: 2px 6px;
+      }
+      .form_submit {
+        margin: 10px 10px;
+        border: none;
+        padding: 5px 10px;
+        background-color: teal;
+        color: white;
+      }
+      .tag{
+        margin: 10px 3px;
+        border: none;
+        width: 3rem;
+        padding: 5px 5px;
+        background-color: teal;
+        color: white;
+      }
+      .student_table{
+          margin: 15px auto;
+      }
+    </style>
+  </head>
+  <!-- Head Section Ends -->
+  <!-- Body Tag :: Content of html document will be written here. -->
+  <body>
+    <main class="container">
+      <h1 class="text-center">HTML Form Demonstration</h1>
+      <!-- Create Html Form -->
+      <form
+        method="post"
+        class="form-control"
+        id="task-from"
+        enctype="multipart/form-data"
+      >
+        <fieldset>
+          <legend class="label">Student Registration Form</legend>
+          <div class="form-row">
+            <div class="form-item">
+              <label for="first_name" class="label">First Name</label>
+              <input
+                type="text"
+                id="first_name"
+                name="first_name"
+                class="form-input"
+              />
+            </div>
+            <div class="form-item">
+              <label for="last_name" class="label">Last Name</label>
+              <input
+                type="text"
+                id="last_name"
+                name="last_name"
+                class="form-input"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-item">
+              <label for="Age" class="label">Age</label>
+              <input type="number" id="Age" name="age" class="form-input" />
+            </div>
+            <div class="form-item">
+              <!-- Label is used for given Intro to input felid :: id of input map to for attr of label -->
+              <label for="gender" class="label">Gender</label>
+              <select name="gender" id="gender" class="form-input">
+                <!-- opt group is used group the related options -->
+                <optgroup label="Select Gender">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="trans">Others</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-item">
+              <label for="address" class="label">Address</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                class="form-input"
+              />
+            </div>
+            <div class="form-item">
+              <label for="contact" class="label">Contact Number</label>
+              <input
+                type="tel"
+                id="contact"
+                name="contact"
+                class="form-input"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-item">
+              <label for="subject" class="label">Subject</label>
+              <div id="input-categories">
+                <ul id="list"></ul>
+              </div>
+              <div class="row">
+                <input
+                type="text"
+                value=""
+                id="subject"
+                name="subject"
+                class="form-input"
+              />
+              <button type="button" id="add_subject" class="tag">Add</button>
+              </div>
+              
+            </div>
+          </div>
+          <button type="submit" class="form_submit" id="submit">Submit</button>
+        </fieldset>
+      </form>
+      <!-- form Ends Here -->
+
+         <!-- create Table Render users -->
+         <div class="container" id="student_table">
+            <p class="text-center">Student Data Table</p>
+            <button type="button" class="form_submit" id="show_btn">
+              showData
+            </button>
+            <table style="width: 100%">
+                <thead>
+                    <tr class="heading">
+                        <th>Sr No.</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>Subject</th>
+                      </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+            </table>
+          </div>
+
+    </main>
+
+    <script>
+      let subjects = [];
+      let user_data = [];
+      let count = 0;
+      const form = document.forms[0];
+      var tagbtn = document.getElementById("add_subject");
+      //Adding TAGS
+      tagbtn.addEventListener("click",  (e) => {
+        e.preventDefault();
+            let sub = document.getElementById("subject").value;
+            subjects.push(sub);
+            list = document.getElementById("list");
+            var li = document.createElement("li");
+            li.innerHTML = sub;
+            list.appendChild(li);
+            localStorage.setItem("tags", JSON.stringify(subjects));
+            sub.value = null;
+      });
+    // FORM SUBMIT HANDLER
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        let first_name = formData.get("first_name");
+        let last_name = formData.get("last_name");
+        let age = formData.get("age");
+        let gender = formData.get("gender");
+        let subject = JSON.parse( localStorage.getItem("tags"));
+        let address = formData.get("address");
+        if (!first_name || !last_name || !age || !gender || !address) {
+          alert("Please fill the whole form..");
+          return;
+        }
+        const obj = {
+          id: count++,
+          first_name: first_name,
+          last_name: last_name,
+          age: age,
+          gender: gender,
+          address: address,
+          subject: subject,
+        };
+        console.log("bje",obj);
+        user_data.push(obj);
+        // Save user data into local Storage
+        localStorage.setItem("student_data", JSON.stringify(user_data));
+        alert("Student Added Successfully");
+      });
+      
+      let showbtn = document.getElementById("show_btn")
+      // Render Student Data
+      showbtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        tableData();
+      });
+
+      var tableData = () => {
+        const data = JSON.parse(localStorage.getItem("student_data"));
+        const tablebody = document.getElementById("table-body");
+        console.log("Rendered Data", data);
+        tablebody.innerHTML = data
+          .map((item) => {
+            return `
+            <tr key=${item?.id}>
+              <td>${item?.id}</td>
+              <td>${item?.first_name}</td>
+              <td>${item?.last_name}</td>
+              <td>${item?.age}</td>
+              <td>${item?.gender}</td>
+              <td>${item?.address}</td>
+              <td>${item?.subject[0]}</td>
+            </tr>
+            `;
+          })
+          .join("");
+      };
+
+    </script>
+  </body>
+</html>

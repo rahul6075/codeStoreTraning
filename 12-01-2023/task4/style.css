@@ -1,0 +1,110 @@
+/* -- Global CSS -- */
+h1 {
+  color: black;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+h3 {
+  color: black;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+.btn {
+  padding: 0px 10px;
+  outline: none;
+  color: whitesmoke;
+}
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* --Global CSS -- */
+
+/* header css */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background: teal;
+  color: white;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.1em;
+}
+
+#navbar .nav-center > ul {
+  list-style: none;
+}
+#navbar .nav-center > ul > li {
+  display: inline;
+  padding: 0px 15px;
+}
+/* header css ends */
+
+/* Hero section CSS */
+#hero .hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#hero .bg-img > img {
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+}
+#hero .hero-content {
+  position: absolute;
+  text-align: center;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-btn {
+  background-color: teal; /* teal */
+  border: none;
+  color: white;
+  margin: 15px 0;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 25px;
+}
+
+/* About Section  */
+#about .about-heading {
+  margin: 25px 0;
+  text-align: center;
+}
+#about .testimonials {
+  display: flex;
+  justify-content: space-between;
+}
+#about .test-item > img {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#about .test-item > h4 {
+  text-align: center;
+  margin: 10px 0;
+  color: black;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+/* Footer Section  */
+.footer {
+  margin: 25px 0 0 0;
+  background-color: grey;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 100px;
+}

@@ -1,0 +1,181 @@
+<!-- HTML BOILERPLATE -->
+<!-- Document Defination ::  Used to define document type.With the help of this browser render the webpage in standered mode-->
+<!DOCTYPE html>
+<!-- Starting or Root Tag:: "lang" attribute define language for document. We can also use 'lang' with any element for differnt language in web page-->
+<html lang="en">
+  <!-- Head Section Start :: Collection meta data(Properties of Web Page) of doc.-->
+  <head>
+    <!-- Encoding Method -->
+    <meta charset="UTF-8" />
+    <!-- It allows to choose internet Explorer browser version."http-equiv" use to make http request according to content given    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- "viewport" help to view document with differnt screen size devices properly -->
+    <meta
+      name="viewport"
+      content="About html boilerplate info"
+      ,
+      initial-scale="1.0"
+    />
+    <!-- fontawesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+      integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Description -->
+    <meta name="description" content="CodeStore Tainging Modules" />
+    <!-- Adding CSS FILE -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- It shows the title of webpage in browser. Also web age searched with this title (!Important for SEO). -->
+    <title>Html Task3- 18 Jan 2023</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Hind", sans-serif;
+      }
+    </style>
+  </head>
+  <!-- Head Section Ends -->
+  <!-- Body Tag :: Content of html document will be written here. -->
+  <body data-spy="scroll" data-target="#navbar" data-offset="50">
+    <main class="container">
+      <!-- Header Section  -->
+      <header>
+        <nav id="navbar">
+          <div class="nav-left">
+            <div class="logo">
+              <span><i class="fa-solid fa-code"></i>DemoProject</span>
+            </div>
+          </div>
+          <div class="nav-center">
+            <ul class="nav-items">
+              <li class="nav-item"><a href="/">Home</a></li>
+              <li class="nav-item"><a href="#hero">Explore</a></li>
+              <li class="nav-item"><a href="#about">About Us</a></li>
+              <li class="nav-item"><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="nav-right">
+            <span class="btn"><i class="fa-solid fa-user"></i> SignIn</span>
+          </div>
+        </nav>
+      </header>
+      <!-- Header Ends Here -->
+      <!-- Hero Section start -->
+      <section id="hero">
+        <div class="hero-container">
+          <div class="bg-img">
+            <img src="./assets/bg.webp" alt="" />
+          </div>
+
+          <div class="hero-content">
+            <h1 class="heading">Explore the World.</h1>
+            <h3 class="sub-heading">
+              Traveling quotes often mention the fact of how travel makes you
+              humble and how life experiences are more important than
+              accumulating things
+            </h3>
+
+            <button class="hero-btn">More About..</button>
+          </div>
+        </div>
+      </section>
+      <!-- Hero Section Ends Here -->
+      <!-- About Section start -->
+      <section id="about">
+        <h2 class="about-heading">-- POPULAR PICKS --</h2>
+        <div class="testimonials">
+          <div class="test-item">
+            <img src="./assets/img1.jpg" alt="" />
+            <h4>Maldiev Summer Pack</h4>
+          </div>
+          <div class="test-item">
+            <img src="./assets/img2.jpg" alt="" />
+            <h4>Indonesiya Baali</h4>
+          </div>
+          <div class="test-item">
+            <img src="./assets/img3.jpg" alt="" />
+            <h4>Euorope Destinations</h4>
+          </div>
+          <div class="test-item">
+            <img src="./assets/img4.jpg" alt="" />
+            <h4>Massuri INDIA</h4>
+          </div>
+          <div class="test-item">
+            <img src="./assets/img5.jpg" alt="" />
+            <h4>Massuri INDIA</h4>
+          </div>
+          <div class="test-item">
+            <img src="./assets/img4.jpg" alt="" />
+            <h4>Massuri INDIA</h4>
+          </div>
+        </div>
+      </section>
+      <!-- About Section Ends Here -->
+      <h2>CONTACT US</h2>
+      <section id="contact">
+        <div class="left">
+          <form id="form" class="form-container">
+            <div class="form-element">
+              <label for="name" class="required">Name</label>
+              <input type="text" id="name" name="name" />
+            </div>
+            <div class="form-element">
+              <label for="email" class="required">Email</label>
+              <input type="text" id="email" name="email" />
+            </div>
+            <div class="form-element" id="password-element">
+              <label for="password" class="required">Mobile No.</label>
+              <input type="tel" id="password" name="password" />
+            </div>
+            <button type="submit" class="form-submit">Submit</button>
+          </form>
+        </div>
+        <div class="right">
+          <h3>Fill the Contact Form to Connect Us</h3>
+          <p>
+            Network analysis refers to a family of methods that describe
+            relationships between units of analysis. A network is comprised of
+            nodes as well as the edges or connections between them.
+          </p>
+        </div>
+      </section>
+
+      <!-- Footer Section start -->
+      <footer id="footer">
+        <div class="left">
+          <h3>Social Media</h3>
+          <i class="fab fa-linkedin icon"></i>
+          <i class="fab fa-facebook icon"></i>
+          <i class="fab fa-instagram icon"></i>
+        </div>
+        <div class="center">
+          <h3>Organization</h3>
+          <p>codeStoresolutions@2023</p>
+        </div>
+        <div class="right">
+          <h3>Contact Us</h3>
+          <p>+91 7860965109</p>
+          <p>+91 7860965109</p>
+        </div>
+      </footer>
+      <!-- Footer Section Ends Here -->
+    </main>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+@import '../Home/style.scss';
+
+.feed {
+    display: flex;
+    max-width: 90%;
+    justify-content: space-between;
+    margin: 5vh auto;
+    .form-control {
+        flex: 3;
+        margin: 1vh auto;
+        fieldset {
+            padding: 1vh 1vw;
+            color: $base_color;
+            button {
+                border: none;
+                outline: none;
+                color: $base_color;
+                letter-spacing: 0.06em;
+                font-weight: 700;
+                padding: 5px 15px;
+                border-radius: $rounded;
+                margin: 10px auto;
+                font-size: 18px;
+            }
+
+            button:hover {
+                cursor: pointer;
+                color: $base_color;
+            }
+
+            .form-item {
+                width: 90%;
+                label {
+                    font-weight: $heading_fw;
+                }
+                div{
+                    ul{
+                        li{
+                            display: inline-block;
+                            text-decoration: none;
+                            background-color: $elementbg_color;
+                            padding: 5px 10px;
+                            font-weight: 500;
+                            border-radius: $rounded;
+                            margin: 2px 0;
+                        }
+                    }
+                }
+                .row{
+                    display: inline-block;
+                    align-items: center;
+                    input{
+                        border: none;
+                        outline: none;
+                        border-bottom: 1px solid $base_color;
+                        opacity: 0.5;
+                        padding: 5px;
+                        letter-spacing: 0.05em; 
+                        margin: .5vh 0;
+                    }
+                    span{
+                        i{
+                            padding: 12px;
+                            line-height: 10px;
+                            border-radius: $circle;
+                            object-fit: contain;
+                            background-color: $elementbg_color;
+                            font-weight: $heading_fw;
+                        }
+                        
+                    }
+                }
+
+            }
+        }
+    }
+    @include responsive($lg) {
+        flex-direction: column;
+    }
+    @include responsive($sm) {
+        flex-direction: column;
+    }
+}
+.cards {
+    flex: 9;
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto fill, minmax(20rem , 1fr));
+    grid-gap: 20px;
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+
+.blog-card {
+    display: flex;
+    margin: 0 0.5rem;
+    flex-direction: column;
+    border: 1px solid rgb(203, 199, 199);
+    border-radius: $rounded;
+    img {
+        border-top-left-radius: $rounded;
+        border-top-right-radius: $rounded;
+        height: 16rem;
+        object-fit: cover;
+        border-bottom: 1px solid $elementbg_color;
+    }
+
+    .card-content {
+        padding: 10px 10px;
+
+        .tag {
+            font-size: 14px;
+            background-color: $base_color;
+            color: white;
+            padding: 2px 5px;
+            border-radius: 25px;
+        }
+
+        h2 {
+            color: grey;
+            letter-spacing: 0.03em;
+        }
+
+        .blog-auther {
+            display: flex;
+            align-items: center;
+            border: 1px solid #eee;
+            border-radius: $rounded;
+
+            img {
+                height: 25px;
+                width: 25px;
+                line-height: 25px;
+                padding: 5px;
+                border-radius: $circle;
+                object-fit: fill;
+            }
+        }
+    }
+}
+
+
+
+

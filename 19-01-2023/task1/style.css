@@ -1,0 +1,16 @@
+body{
+    height: 70vh;
+}
+
+#banner{
+    background: rgb(219, 219, 219);
+}
+#banner .banner-img{
+      height: 35rem;
+      width: 35rem;
+      object-fit: contain;
+}
+.order{
+    background: orange;
+    color: white;
+}

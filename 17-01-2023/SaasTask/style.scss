@@ -1,0 +1,15 @@
+$base_color: teal;
+$text_color: white;
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 60%;
+  margin: 10px auto;
+  background-color: $base_color;
+  h1 {
+    color: $text_color;
+    font-size: 20px;
+  }
+}

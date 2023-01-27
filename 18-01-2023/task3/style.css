@@ -1,0 +1,225 @@
+/** Global Scss **/
+h1 {
+  font-size: 45px;
+  color: teal;
+  letter-spacing: 0.03em;
+}
+
+h3 {
+  color: teal;
+  letter-spacing: 0.03em;
+}
+
+p {
+  color: teal;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  text-align: center;
+  margin: 40px 0;
+  letter-spacing: 0.06em;
+  font-size: 25px;
+  color: teal;
+}
+
+/** header scss **/
+header #navbar {
+  padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1;
+}
+header #navbar .nav-left {
+  float: left;
+}
+header #navbar .nav-left .logo {
+  font-weight: 700;
+  color: teal;
+}
+header #navbar .nav-right {
+  float: right;
+}
+header #navbar .nav-right span {
+  border: 1px solid #eee;
+  padding: 10px 10px;
+  border-radius: 25px;
+  font-weight: 700;
+  color: teal;
+}
+header #navbar .nav-right span i {
+  height: 10px;
+  width: 10px;
+  line-height: 10px;
+  padding: 12px 12px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+header #navbar .nav-right :hover {
+  cursor: pointer;
+}
+header #navbar .nav-center ul li {
+  display: inline;
+  text-decoration: none;
+  padding: 0px 20px;
+}
+header #navbar .nav-center ul li a {
+  text-decoration: none;
+  font-weight: 700;
+  color: teal;
+}
+header #navbar .nav-center ul li a:hover {
+  transition: 300ms;
+  text-decoration: underline;
+}
+header #navbar .nav-center ul li a:active {
+  color: #eee;
+}
+
+/** home scss **/
+#hero .hero-container {
+  display: flex;
+  justify-content: space-between;
+}
+#hero .hero-container .bg-img {
+  flex: 7;
+}
+#hero .hero-container .bg-img img {
+  width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+#hero .hero-container .hero-content {
+  flex: 5;
+  text-align: left;
+  margin: auto 20px;
+}
+#hero .hero-container .hero-content button {
+  border: none;
+  outline: none;
+  background: teal;
+  color: #eee;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 25px;
+  margin: 10px auto;
+}
+#hero .hero-container .hero-content button:hover {
+  cursor: pointer;
+  background: #eee;
+  color: teal;
+}
+
+/*** About section ***/
+#about {
+  max-width: 80%;
+  margin: 10px auto;
+}
+#about .testimonials {
+  display: flex;
+  overflow-x: scroll;
+}
+#about .testimonials .test-item {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 10px;
+}
+#about .testimonials .test-item img {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 10px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+/** Contact **/
+#contact {
+  max-width: 80%;
+  margin: 10px auto;
+  display: flex;
+}
+#contact .left {
+  flex: 8;
+}
+#contact .left .form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px auto;
+  width: 30vw;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+}
+#contact .left .form-container .form-element {
+  display: flex;
+  flex-direction: column;
+  margin: 5px auto;
+  padding: 10px 0;
+  width: 25vw;
+  /*  Pesudo Element (*) Added After Label */
+}
+#contact .left .form-container .form-element .required {
+  padding: 3px 0;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+#contact .left .form-container .form-element .required::after {
+  content: "*";
+  color: red;
+}
+#contact .left .form-container .form-element input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid teal;
+  opacity: 0.5;
+  padding: 5px;
+  letter-spacing: 0.05em;
+}
+#contact .left .form-container button {
+  border: none;
+  outline: none;
+  background: teal;
+  color: #eee;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 25px;
+  margin: 10px auto;
+}
+#contact .left .form-container button:hover {
+  cursor: pointer;
+  background: #eee;
+  color: teal;
+}
+#contact .right {
+  flex: 4;
+  margin: auto 0;
+}
+
+/** Footer **/
+#footer {
+  background-color: #eee;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+  margin-top: 40px;
+}
+#footer .left {
+  margin: auto 10px;
+}
+#footer .left .icon {
+  font-size: 35px;
+  padding: 5px 0 5px 5px;
+}
+#footer .left .icon:hover {
+  color: teal;
+}
+#footer .center {
+  margin: auto 10px;
+}
+#footer .right {
+  margin: auto 10px;
+}/*# sourceMappingURL=style.css.map */

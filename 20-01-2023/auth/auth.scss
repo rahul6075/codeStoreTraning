@@ -1,0 +1,108 @@
+/** Using Main page scss **/
+@import "../Home/style.scss";
+
+#auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10vh auto;
+  max-width: 30rem;
+  box-shadow: $box_shadow;
+  .first {
+    display: flex;
+    flex-direction: column;
+    span {
+      display: flex;
+      justify-content: space-between;
+      padding: 1vh 3vw;
+      font-size: 22px;
+      align-items: center;
+      margin: 1vh 0;
+      background-color: $elementbg_color;
+      color: $base_color;
+      i{
+        padding: 0 5px;
+      }
+    }
+  }
+
+  .second {
+    #form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      button {
+        border: none;
+        outline: none;
+        color: $base_color;
+        letter-spacing: 0.06em;
+        font-weight: 700;
+        padding: 5px 15px;
+        border-radius: $rounded;
+        margin: 10px auto;
+        font-size: 18px;
+      }
+      button:hover {
+        cursor: pointer;
+        color: $base_color;
+      }
+    }
+    .form-element {
+      display: flex;
+      flex-direction: column;
+      width: 22rem;
+      .required {
+        padding: 3px 0;
+        letter-spacing: 0.04em;
+        font-weight: 700;
+      }
+      /*  Pesudo Element (*) Added After Label */
+      .required::after {
+        content: "*";
+        color: red;
+      }
+      input {
+        outline: none;
+        border: 1px solid $base_color;
+        opacity: 0.5;
+        padding: 8px 15px;
+        letter-spacing: 0.05em;
+        border-radius: $rounded;
+      }
+      
+    }
+    #password-element{
+       position: relative;
+       i{
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: 10px 1vw;
+       }
+    }
+  }
+  /** Medial Quries **/
+  @include responsive($med) {
+    width: 55vw;
+    .second{
+      #form{
+        .form-element{
+          width: 45vw;
+       }
+      }
+    }
+  }
+  @include responsive($sm) {
+    width: 80vw;
+    .second{
+      #form{
+        .form-element{
+          width: 70vw;
+       }
+      }
+    }
+    
+  }
+}

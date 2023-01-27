@@ -1,0 +1,117 @@
+<!-- HTML BOILERPLATE -->
+
+<!-- Document Defination ::  Used to define document type.With the help of this browser render the webpage in standered mode-->
+<!DOCTYPE html>
+<!-- Starting or Root Tag:: "lang" attribute define language for document. We can also use 'lang' with any element for differnt language in web page-->
+<html lang="en">
+  <!-- Head Section Start :: Collection meta data(Properties of Web Page) of doc.-->
+  <head>
+    <!-- Encoding Method -->
+    <meta charset="UTF-8" />
+    <!-- It allows to choose internet Explorer browser version."http-equiv" use to make http request according to content given    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- "viewport" help to view document with differnt screen size devices properly -->
+    <meta
+      name="viewport"
+      content="About html boilerplate info"
+      ,
+      initial-scale="1.0"
+    />
+    <!-- Description -->
+    <meta name="description" content="CodeStore Tainging Modules" />
+    <!-- It shows the title of webpage in browser. Also web age searched with this title (!Important for SEO). -->
+    <title>Html Task1- 16 Jan 2023</title>
+    <style>
+      .container {
+        max-width: 60%;
+        margin: 0 auto;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .form-control {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 20rem;
+        margin: 15px auto;
+        padding: 25px 15px;
+        border: 1px solid#eee;
+        border-radius: 5px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      .form-item {
+        display: flex;
+        flex-direction: column;
+        padding: 6px 0px;
+      }
+      .label {
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        padding: 2px 5;
+        margin: 2px 6px;
+      }
+     
+      .form-item > input, select {
+        border: none;
+        outline: none;
+        background-color: #eee;
+        padding: 5px 15px;
+        border-radius: 25px;
+      }
+      .form_submit {
+        width: 40%;
+        border: none;
+        padding: 5px 10px;
+        background-color: teal;
+        color: white;
+      }
+      
+    </style>
+  </head>
+  <!-- Head Section Ends -->
+  <!-- Body Tag :: Content of html document will be written here. -->
+  <body>
+    <main class="container">
+      <h1 class="text-center">HTML Form Demonstration</h1>
+      <!-- Create Html Form -->
+      <form
+        method="post"
+        class="form-control"
+        id="task-from"
+        enctype="multipart/form-data"
+      >
+        <!-- Feild set used  for the grouping related elements -->
+        <fieldset>
+          <!-- Used for Giving Caption to the feild set -->
+          <legend>User SignUp Form</legend>
+          <div class="form-item">
+            <!-- Label is used for given Intro to input felid :: id of input map to for attr of label -->
+            <label for="first_name" class="label">First Name</label>
+            <input
+              type="text"
+              id="first_name"
+              name="first_name"
+              class="form-input"
+            />
+          </div>
+          <div class="form-item">
+            <!-- Label is used for given Intro to input felid :: id of input map to for attr of label -->
+            <label for="gender" class="label">Gender</label>
+            <select name="gender" id="gender">
+              <!-- opt group is used group the related options -->
+              <optgroup label="Select Gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="trans">Others</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button type="submit" class="form_submit" id="submit">Submit</button>
+        </fieldset>
+      </form>
+      <!-- form Ends Here -->
+    </main>
+  </body>
+</html>
