@@ -1,3 +1,5 @@
+<!-- HTML BOILERPLATE -->
+
 <!-- Document Defination ::  Used to define document type.With the help of this browser render the webpage in standered mode-->
 <!DOCTYPE html>
 <!-- Starting or Root Tag:: "lang" attribute define language for document. We can also use 'lang' with any element for differnt language in web page-->
@@ -39,7 +41,7 @@
     <!-- Description -->
     <meta name="description" content="CodeStore Tainging Modules" />
     <!-- It shows the title of webpage in browser. Also web age searched with this title (!Important for SEO). -->
-    <title>Html Task1- 24 Jan 2023</title>
+    <title>Html Task1- 16 Jan 2023</title>
     <style>
       * {
         margin: 0;
@@ -47,19 +49,144 @@
         font-family: "Hind", sans-serif;
       }
       .container {
-        max-width: 80%;
-        margin: 5rem auto;
-        position: relative;
+        max-width: 60%;
+        margin: 0 auto;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .teal {
+        color: teal;
+      }
+      .mt-5 {
+        margin-top: 2rem;
+      }
+      fieldset {
+        color: teal;
+        font-weight: 700;
+      }
+      table {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      table,
+      th,
+      td {
+        border-top: 1px solid#eee;
+        border-bottom: 1px solid#eee;
+        border-collapse: collapse;
+        padding: 10px 5px;
+      }
+      table,
+      tr {
+        padding: 10px 5px;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+      }
+      .table-item {
+        text-align: center;
+      }
+      .student_table {
+        margin: 15px auto;
+      }
+      .form-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+      }
+
+      .form-item > label {
+        font-weight: 700;
+        letter-spacing: 0.05em;
+      }
+      .form-input {
+        outline: none;
+        border: 1px solid teal;
+        opacity: 0.5;
+        padding: 8px 15px;
+        letter-spacing: 0.05em;
+        font-weight: 700;
+      }
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0;
+      }
+      .btn > button {
+        border: none;
+        outline: none;
+        color: teal;
+        letter-spacing: 0.06em;
+        font-weight: 700;
+        padding: 5px 15px;
+        border-radius: 25px;
+        margin: 10px auto;
+        font-size: 18px;
+      }
+      button:hover {
+        cursor: pointer;
+        color: teal;
       }
     </style>
   </head>
   <!-- Head Section Ends -->
   <!-- Body Tag :: Content of html document will be written here. -->
   <body>
-     <div class="container">
-         <h1 class="text-center">Task4 - Build Trveling</h1>
-     </div>
-    <!-- Adding external script -->
+    <main class="container">
+      <h1 class="text-center teal">Travel Scheduling App</h1>
+      <!-- Create Html Form -->
+      <form method="post" class="form-control" id="task-from">
+        <!-- Feild set used  for the grouping related elements -->
+        <fieldset>
+          <legend class="label">Find Your Journey</legend>
+          <div class="form-row">
+            <div class="form-item">
+              <label for="time" class="label">Source</label>
+              <select name="source" id="city-select-source" class="form-input">
+                <option value="">--Please choose an option--</option>
+              </select>
+              <span class="error-message" id="interest_type"></span>
+            </div>
+            <div class="form-item">
+              <label for="time" class="label">Destination</label>
+              <select
+                name="destination"
+                id="city-select-destination"
+                class="form-input"
+              >
+                <option value="">--Please choose an option--</option>
+              </select>
+              <span class="error-message" id="destination"></span>
+            </div>
+          </div>
+          <div class="btn">
+            <button
+              type="button"
+              class="filter_submit"
+              id="filter_submit"
+              onclick="addJourney()"
+            >
+              Add
+            </button>
+          </div>
+        </fieldset>
+      </form>
+      <!-- form Ends Here -->
+      <!-- Product Table -->
+      <div class="container mt-5" id="student_table">
+        <h3 class="text-center">Schedule Table</h3>
+        <table style="width: 100%">
+          <thead>
+            <tr class="heading">
+              <th>Source</th>
+              <th>Destination</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </main>
+
     <script src="./main.js"></script>
   </body>
 </html>
