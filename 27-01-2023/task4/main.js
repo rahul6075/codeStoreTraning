@@ -1,18 +1,18 @@
 const cityData = [
   {
-    value: "Bihar",
+    value: "BH",
     name: "Bihar",
   },
   {
-    value: "Chandigarh",
+    value: "CH",
     name: "Chandigarh",
   },
   {
-    value: "Chhattisgarh",
+    value: "CHT",
     name: "Chhattisgarh",
   },
   {
-    value: "Delhi",
+    value: "DC",
     name: "Delhi",
   },
   {
@@ -56,11 +56,29 @@ const cityData = [
 let id = 0;
 let localData = JSON.parse(localStorage.getItem("table"));
 let tableData = !localData || localData?.length <= 0 ? [] : localData;
-let filterSource = [];
-let filterdestination = [];
-// Collect Added Cities
-tableData.map((item) => filterSource.push(item.source));
-tableData.map((item) => filterdestination.push(item.destination));
+
+
+/**
+ * 
+ * @param {Already Added Options} tableData 
+ * @returns array of source
+ */
+function getOptionsSoucre(tableData){
+  let data = [];
+  tableData.map((item) => data.push(item.source));
+  return data;
+}
+
+/**
+ * 
+ * @param {Already Added Options} tableData 
+ * @returns array of destinations
+ */
+function getOptionsDestination(tableData){
+ let data = [];
+ tableData.map((item) => data.push(item.destination));
+ return data;
+}
 
 window.addEventListener("load", (e) => {
   showtableData(tableData);
@@ -68,6 +86,8 @@ window.addEventListener("load", (e) => {
   let selectDestintion = document.getElementById("city-select-destination");
 
   // Filter Options
+  let filterSource = getOptionsSoucre(tableData);
+  let filterdestination = getOptionsDestination(tableData);
   let SourcefilterOptions = filterOptions(filterSource);
   let destinationfilterOptions = filterOptions(filterdestination);
   loadOptions(SourcefilterOptions, selectSource);
@@ -89,7 +109,15 @@ function addJourney() {
       destination: destintionValue.value,
     });
     localStorage.setItem("table", JSON.stringify(tableData));
+    // Rerender Table
     showtableData(tableData);
+    // console.log("Onadd",tableData);
+
+    
+    // Fileter Options on render
+    let filterSource = getOptionsSoucre(tableData);
+    let filterdestination = getOptionsDestination(tableData);
+    
     let SourcefilterOptions = filterOptions(filterSource);
     let destinationfilterOptions = filterOptions(filterdestination);
     loadOptions(SourcefilterOptions,  sourceValue );
