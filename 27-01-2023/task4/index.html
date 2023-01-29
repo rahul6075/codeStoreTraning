@@ -127,6 +127,15 @@
         cursor: pointer;
         color: teal;
       }
+      #table-body{
+          max-height: 20rem;
+          overflow-y: scroll;
+      }
+      .error-message{
+         color: red;
+         font-size: 14px;
+
+      }
     </style>
   </head>
   <!-- Head Section Ends -->
@@ -139,13 +148,14 @@
         <!-- Feild set used  for the grouping related elements -->
         <fieldset>
           <legend class="label">Find Your Journey</legend>
+          <span class="text-center error-message" id="message"></span>
           <div class="form-row">
             <div class="form-item">
               <label for="time" class="label">Source</label>
-              <select name="source" id="city-select-source" class="form-input">
+              <select name="source" id="city-select-source" class="form-input" onchange="onChange()" >
                 <option value="">--Please choose an option--</option>
               </select>
-              <span class="error-message" id="interest_type"></span>
+              <span class="error-message" id="source"></span>
             </div>
             <div class="form-item">
               <label for="time" class="label">Destination</label>
@@ -163,7 +173,7 @@
             <button
               type="button"
               class="filter_submit"
-              id="filter_submit"
+              id="submit"
               onclick="addJourney()"
             >
               Add

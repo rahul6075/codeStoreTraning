@@ -1,5 +1,9 @@
 const cityData = [
   {
+    value: "CV",
+    name: "--Please choose an option--",
+  },
+  {
     value: "BH",
     name: "Bihar",
   },
@@ -57,13 +61,11 @@ let id = 0;
 let localData = JSON.parse(localStorage.getItem("table"));
 let tableData = !localData || localData?.length <= 0 ? [] : localData;
 
-
 /**
- * 
  * @param {Already Added Options} tableData 
  * @returns array of source
  */
-function getOptionsSoucre(tableData){
+function getOptionsSoucre(tableData) {
   let data = [];
   tableData.map((item) => data.push(item.source));
   return data;
@@ -74,10 +76,10 @@ function getOptionsSoucre(tableData){
  * @param {Already Added Options} tableData 
  * @returns array of destinations
  */
-function getOptionsDestination(tableData){
- let data = [];
- tableData.map((item) => data.push(item.destination));
- return data;
+function getOptionsDestination(tableData) {
+  let data = [];
+  tableData.map((item) => data.push(item.destination));
+  return data;
 }
 
 window.addEventListener("load", (e) => {
@@ -96,6 +98,26 @@ window.addEventListener("load", (e) => {
 
 
 /**
+ * function to filter destination option on selecting source
+ */
+function onChange() {
+  try {
+    let sourceValue = document.querySelector("#city-select-source").value;
+    if (sourceValue !== "--Please choose an option--") {
+      let destintionValue = document.getElementById("city-select-destination");
+      let filterOnchange = cityData.filter((item) => item.name !== sourceValue);
+      loadOptions(filterOnchange, destintionValue);
+    }else{
+       throw "Please Select a Source."
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+
+
+/**
  * Add Schedule Function
  */
 function addJourney() {
@@ -103,6 +125,13 @@ function addJourney() {
     id++;
     let sourceValue = document.querySelector("#city-select-source");
     let destintionValue = document.getElementById("city-select-destination");
+
+    let submitBtn = document.getElementById("submit");
+    // Check for null validation
+    if (!sourceValue.value || !destintionValue.value) {
+      submitBtn.style.cursor = "not-allowed";
+      throw "Please Select Options";
+    }
     tableData.push({
       id: id,
       source: sourceValue.value,
@@ -113,22 +142,22 @@ function addJourney() {
     showtableData(tableData);
     // console.log("Onadd",tableData);
 
-    
+
     // Fileter Options on render
     let filterSource = getOptionsSoucre(tableData);
     let filterdestination = getOptionsDestination(tableData);
-    
+
     let SourcefilterOptions = filterOptions(filterSource);
     let destinationfilterOptions = filterOptions(filterdestination);
-    loadOptions(SourcefilterOptions,  sourceValue );
+    loadOptions(SourcefilterOptions, sourceValue);
     loadOptions(destinationfilterOptions, destintionValue);
   } catch (err) {
+    document.getElementById("message").innerHTML = err;
     console.log(err);
   }
 }
 
 /**
- *
  * @param {tabledata} data
  */
 
