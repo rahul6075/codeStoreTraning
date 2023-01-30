@@ -62,7 +62,7 @@ let localData = JSON.parse(localStorage.getItem("table"));
 let tableData = !localData || localData?.length <= 0 ? [] : localData;
 
 /**
- * @param {Already Added Options} tableData 
+ * @param {Already Added Options} tableData
  * @returns array of source
  */
 function getOptionsSoucre(tableData) {
@@ -72,8 +72,8 @@ function getOptionsSoucre(tableData) {
 }
 
 /**
- * 
- * @param {Already Added Options} tableData 
+ *
+ * @param {Already Added Options} tableData
  * @returns array of destinations
  */
 function getOptionsDestination(tableData) {
@@ -96,7 +96,6 @@ window.addEventListener("load", (e) => {
   loadOptions(destinationfilterOptions, selectDestintion);
 });
 
-
 /**
  * function to filter destination option on selecting source
  */
@@ -107,15 +106,13 @@ function onChange() {
       let destintionValue = document.getElementById("city-select-destination");
       let filterOnchange = cityData.filter((item) => item.name !== sourceValue);
       loadOptions(filterOnchange, destintionValue);
-    }else{
-       throw "Please Select a Source."
+    } else {
+      throw "Please Select a Source.";
     }
   } catch (err) {
     console.log(err);
   }
 }
-
-
 
 /**
  * Add Schedule Function
@@ -128,10 +125,15 @@ function addJourney() {
 
     let submitBtn = document.getElementById("submit");
     // Check for null validation
-    if (!sourceValue.value || !destintionValue.value) {
-      submitBtn.style.cursor = "not-allowed";
+    if (
+      !sourceValue.value ||
+      !destintionValue.value ||
+      sourceValue.value === "--Please choose an option--" ||
+      destintionValue.value === "--Please choose an option--"
+    ) {
       throw "Please Select Options";
     }
+    document.getElementById("message").innerHTML = "";
     tableData.push({
       id: id,
       source: sourceValue.value,
@@ -141,7 +143,6 @@ function addJourney() {
     // Rerender Table
     showtableData(tableData);
     // console.log("Onadd",tableData);
-
 
     // Fileter Options on render
     let filterSource = getOptionsSoucre(tableData);
@@ -189,8 +190,8 @@ const loadOptions = (data, ele) => {
 };
 
 /**
- * 
- * @param {array of selected Options} data 
+ *
+ * @param {array of selected Options} data
  * @returns filtered Options
  */
 function filterOptions(data) {
