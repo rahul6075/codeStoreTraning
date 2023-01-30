@@ -84,33 +84,50 @@ window.addEventListener("load", (e) => {
   loadOptions(cityData, selectDestintion);
 });
 
-
-function disable(data){
-  var options = document .getElementById("city-select-destination").getElementsByTagName("option");
+function disable(data) {
+  var options = document
+    .getElementById("city-select-destination")
+    .getElementsByTagName("option");
   console.log(data);
   for (var i = 0; i < options.length; i++) {
-    if (options[i].value === data ) {
+    if (options[i].value === data) {
       options[i].disabled = true;
     }
   }
 }
 
-function enable(){
-  var options = document .getElementById("city-select-destination").getElementsByTagName("option");
+function enable(id) {
+  var options = document
+    .getElementById(id)
+    .getElementsByTagName("option");
   for (var i = 0; i < options.length; i++) {
-      options[i].disabled = false;
+    options[i].disabled = false;
   }
 }
 
 
+function onChange1() {
+  let destValue = document.querySelector("#city-select-destination").value;
 
+  if (destValue != "" || sourceValue !== "--Please choose an option--") {
+    var options = document
+      .getElementById("city-select-source")
+      .getElementsByTagName("option");
+    for (var i = 0; i < options.length; i++) {
+      // lowercase comparison for case-insensitivity
+      if (options[i].value == destValue) {
+        options[i].disabled = true;
+      }
+    }
+  }
+}
 
 /**
  * function to filter destination option on selecting source
  */
 function onChange() {
   try {
-    enable();
+    enable("city-select-destination");
     let sourceValue = document.querySelector("#city-select-source").value;
     if (sourceValue !== "--Please choose an option--") {
       var options = document
@@ -123,18 +140,17 @@ function onChange() {
         }
       }
       let arrSource = [];
-  
+
       tableData.map((obj) => {
-        let selectSource =document.getElementById("city-select-source").value;
+        let selectSource = document.getElementById("city-select-source").value;
         if (selectSource === obj.source) {
           arrSource.push(obj.destination);
         }
       });
 
-      arrSource.forEach(item => {
-            disable(item);
-      })
-      
+      arrSource.forEach((item) => {
+        disable(item);
+      });
     } else {
       throw "Please Select a Source.";
     }
@@ -197,14 +213,14 @@ function addJourney() {
         localStorage.setItem("table", JSON.stringify(tableData));
         // Rerender Table
         showtableData(tableData);
-        sourceInput.value = "--Please choose an option--"
-        destintionInput.value ="--Please choose an option--"
+        sourceInput.value = "--Please choose an option--";
+        destintionInput.value = "--Please choose an option--";
       }
     }
   } catch (err) {
     setTimeout(() => {
-      document.getElementById("message").innerHTML = err;  
-    },3000)
+      document.getElementById("message").innerHTML = err;
+    }, 3000);
     console.log(err);
   }
 }
