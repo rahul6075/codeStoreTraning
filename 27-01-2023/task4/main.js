@@ -102,6 +102,9 @@ function enable(){
   }
 }
 
+
+
+
 /**
  * function to filter destination option on selecting source
  */
@@ -119,16 +122,19 @@ function onChange() {
           options[i].disabled = true;
         }
       }
-      let arr = [];
+      let arrSource = [];
+  
       tableData.map((obj) => {
         let selectSource =document.getElementById("city-select-source").value;
         if (selectSource === obj.source) {
-          arr.push(obj.destination);
+          arrSource.push(obj.destination);
         }
       });
-      arr.forEach(item => {
+
+      arrSource.forEach(item => {
             disable(item);
       })
+      
     } else {
       throw "Please Select a Source.";
     }
@@ -191,10 +197,14 @@ function addJourney() {
         localStorage.setItem("table", JSON.stringify(tableData));
         // Rerender Table
         showtableData(tableData);
+        sourceInput.value = "--Please choose an option--"
+        destintionInput.value ="--Please choose an option--"
       }
     }
   } catch (err) {
-    document.getElementById("message").innerHTML = err;
+    setTimeout(() => {
+      document.getElementById("message").innerHTML = err;  
+    },3000)
     console.log(err);
   }
 }
