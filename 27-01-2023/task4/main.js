@@ -96,31 +96,57 @@ function disable(data) {
   }
 }
 
-function enable(id) {
+function disable2(data) {
   var options = document
-    .getElementById(id)
+    .getElementById("city-select-source")
     .getElementsByTagName("option");
+  console.log(data);
+  for (var i = 0; i < options.length; i++) {
+    if (options[i].value === data) {
+      options[i].disabled = true;
+    }
+  }
+}
+
+function enable(id){
+  var options = document
+  .getElementById(id)
+  .getElementsByTagName("option");
   for (var i = 0; i < options.length; i++) {
     options[i].disabled = false;
   }
 }
 
-
 function onChange1() {
-  let destValue = document.querySelector("#city-select-destination").value;
-
-  if (destValue != "" || sourceValue !== "--Please choose an option--") {
-    var options = document
-      .getElementById("city-select-source")
-      .getElementsByTagName("option");
-    for (var i = 0; i < options.length; i++) {
-      // lowercase comparison for case-insensitivity
-      if (options[i].value == destValue) {
-        options[i].disabled = true;
-      }
-    }
+  try {
+    enable("city-select-source");
+    let destValue = document.querySelector("#city-select-destination").value;
+    console.log(destValue);
+    if (destValue !== "" || sourceValue !== "--Please choose an option--") {
+     var options = document
+       .getElementById("city-select-source")
+       .getElementsByTagName("option");
+     for (var i = 0; i < options.length; i++) {
+       // lowercase comparison for case-insensitivity
+       if (options[i].value == destValue) {
+         options[i].disabled = true;
+       }
+     }
+   }
+   let arr = [];
+   tableData.map((obj) => {
+     if (destValue === obj.destination) {
+       arr.push(obj.source);
+     }
+   });
+   arr.forEach((data) => {
+      disable2(data)
+   })
+  } catch (err) {
+    console.log(err);
   }
 }
+
 
 /**
  * function to filter destination option on selecting source
@@ -186,10 +212,11 @@ function addJourney() {
   try {
     let sourceInput = document.querySelector("#city-select-source");
     let destintionInput = document.getElementById("city-select-destination");
+    console.log(sourceInput.value, destintionInput.value)
     // Check for null validation
     if (
-      !sourceInput.value ||
-      !destintionInput.value ||
+      sourceInput.value === "" ||
+      destintionInput.value === "" ||
       sourceInput.value === "--Please choose an option--" ||
       destintionInput.value === "--Please choose an option--"
     ) {
@@ -202,20 +229,15 @@ function addJourney() {
         destination: destintionInput.value,
       };
       // console.log(scheduleObj);
-
-      if (check(tableData, scheduleObj)) {
-        disabledestOptions(tableData, check(tableData, scheduleObj));
-        document.getElementById("city-select-destination").value =
-          "--Please choose an option--";
-        throw "It is alredy exists";
-      } else {
-        tableData.push(scheduleObj);
-        localStorage.setItem("table", JSON.stringify(tableData));
-        // Rerender Table
-        showtableData(tableData);
-        sourceInput.value = "--Please choose an option--";
-        destintionInput.value = "--Please choose an option--";
-      }
+      tableData.push(scheduleObj);
+      localStorage.setItem("table", JSON.stringify(tableData));
+      // Rerender Table
+      showtableData(tableData);
+      sourceInput.value = "--Please choose an option--";
+      destintionInput.value = "--Please choose an option--";
+    
+      enable("city-select-source");
+      enable("city-select-destination");
     }
   } catch (err) {
     setTimeout(() => {
