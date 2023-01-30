@@ -1,7 +1,21 @@
 /** Using Main page scss **/
 @import "../Home/style.scss";
 
+
+svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+    width: 100%;
+    height: 100%;
+		box-sizing: border-box;
+		display: block;
+		background-color: #ef7046;
+    background-image: linear-gradient(to bottom, rgba(241, 230, 235, 0.86), #ffff);
+	}
+
 #auth {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,6 +36,7 @@
       background-color: $elementbg_color;
       color: $base_color;
       i{
+        color: red;
         padding: 0 5px;
       }
     }

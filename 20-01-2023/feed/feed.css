@@ -221,7 +221,7 @@ h3 {
 }
 #blog-gallery .blog-container .blog-card {
   display: flex;
-  width: 16rem;
+  width: 17rem;
   margin: 0 0.5rem;
   flex-direction: column;
   border: 1px solid rgb(203, 199, 199);
@@ -478,6 +478,8 @@ h3 {
   max-width: 100%;
   margin: 0 auto;
   display: grid;
+  grid-template-columns: repeat(auto -webkit-fill-available, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto fill, minmax(20rem, 1fr));
   grid-gap: 20px;
   max-height: 100vh;
   overflow-y: scroll;
@@ -486,8 +488,6 @@ h3 {
 .blog-card {
   display: flex;
   margin: 0 0.5rem;
-  min-width: 16rem;
-  max-width: 22rem;
   flex-direction: column;
   border: 1px solid rgb(203, 199, 199);
   border-radius: 25px;
@@ -528,17 +528,4 @@ h3 {
   border-radius: 50%;
   -o-object-fit: fill;
      object-fit: fill;
-}
-
-/* Screen larger than 600px? 2 column */
-@media (min-width: 600px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-/* Screen larger than 900px? 3 columns */
-@media (min-width: 900px) {
-  .cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }/*# sourceMappingURL=feed.css.map */
