@@ -1,0 +1,240 @@
+/** Variable Declearation **/
+$base_color: teal;
+$background_color: #eee;
+$black_color: #192a56;
+$light_color: #666;
+$border_circle: 50%;
+$border_rounded: 25px;
+$bold_fw: 700;
+$semibold_fw: 600;
+$text_fw: 400;
+$box_shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+$heading_sz: 25px;
+/** Screen Sizes **/
+$xl: 1200px; // 4k and hi-res desktop
+$lg: 992px; // 1080 and hi-res laptops
+$med: 768px; // hi-res tablets and low-res laptops
+$sm: 576px; // mobile and low-res tablets
+
+/** Responsive Media Query Mixin **/
+@mixin responsive($query) {
+  @media (max-width: $query) {
+    @content;
+  }
+}
+
+/*** Global  SCSS ***/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Arvo", serif;
+  font-family: "Hind", sans-serif;
+  font-family: "Maven Pro", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  transition: all 0.2s linear;
+}
+h1 {
+  font-weight: $bold_fw;
+}
+
+a {
+  color: $black_color;
+  font-weight: $semibold_fw;
+  text-transform: capitalize;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+a:hover {
+  background-color: transparent;
+  color: $light_color;
+}
+
+.tag-heading{
+     margin: 1em 0;
+     display: flex;
+     justify-content: center;
+     text-transform: capitalize;
+}
+.text-center{
+    text-align: center;
+}
+
+.err-message{
+   font-size: 14px;
+   font-weight: $semibold_fw;
+   letter-spacing: 0.04em;
+}
+
+/** Header Csss **/
+header {
+  position: static;
+  top: 0;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 3em;
+  .nav-left {
+    float: left;
+    .logo {
+      font-size: $heading_sz;
+      font-weight: $bold_fw;
+      color: $black_color;
+    }
+  }
+  .nav-links {
+    float: right;
+    ul {
+      display: block;
+      li {
+        display: inline-block;
+        padding: 5px 20px;
+        span {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 4px 5px;
+          border: 1px solid $light_color;
+          border-radius: $border_rounded;
+          .menu {
+            display: block;
+            padding: 2px 4px;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/** carousel css **/
+#carousel {
+  position: relative;
+  .slide {
+    max-width: 90%;
+    margin: 3vh auto;
+    display: flex;
+    justify-content: space-between;
+    .bg-img {
+      flex: 7;
+      img {
+        width: 100%;
+        object-fit: fill;
+      }
+    }
+    .slide-content {
+      flex: 5;
+      text-align: left;
+      margin: auto;
+      button {
+        border: none;
+        outline: none;
+        margin: 0.5em 0px;
+        padding: 10px 0px;
+        background: $background_color;
+        color: $black_color;
+        font-weight: $bold_fw;
+        font-size: 1.5em;
+        border-radius: 30px;
+      }
+    }
+  }
+  .prev,
+  .next {
+    position: absolute;
+    top: 40%;
+    width: auto;
+    margin: 0 2vw;
+    padding: 10px;
+    line-height: 1.5vh;
+    cursor: pointer;
+    color: $base_color;
+    font-size: $heading_sz;
+    background-color: #eee;
+    border-radius: $border_circle;
+  }
+  .next {
+    position: absolute;
+    top: 40%;
+    right: 0;
+    width: auto;
+    margin: 0 2vw;
+    padding: 10px;
+    line-height: 1.5vh;
+    cursor: pointer;
+    color: $black_color;
+    font-size: $heading_sz;
+  }
+
+  /** Medial Quries **/
+  @include responsive($med) {
+    .slide {
+      flex-direction: column;
+      .slide-content {
+        h1 {
+          font-size: 3vh;
+        }
+      }
+    }
+  }
+}
+
+
+/** Services ***/
+
+#services{
+    max-width: 80%;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns:  repeat(4, minmax(25rem , 1fr));;
+    gap: 1rem;
+    grid-auto-rows: auto;
+    .service-card {
+        display: flex;
+        width: 17rem;
+        margin: 0 0.5rem;
+        flex-direction: column;
+        border: 1px solid rgb(203, 199, 199);
+        border-radius: $border_rounded;
+        img {
+          border-top-left-radius: $border_rounded;
+          border-top-right-radius: $border_rounded;
+          height: 11rem;
+          object-fit: contain;
+          border-bottom: 1px solid $light_color;
+        }
+        .card-content {
+          padding: 10px 10px;
+          .tag {
+            font-size: 14px;
+            background-color: $background_color;
+            color: $black_color;
+            padding: 2px 5px;
+            border-radius: 25px;
+          }
+          h2 {
+            color: grey;
+            letter-spacing: 0.03em;
+          }
+          .blog-auther {
+            display: flex;
+            align-items: center;
+            border: 1px solid #eee;
+            border-radius: $border_circle;
+            img {
+              height: 25px;
+              width: 25px;
+              line-height: 25px;
+              padding: 5px;
+              border-radius: $border_circle;
+              object-fit: fill;
+            }
+          }
+        }
+      }
+   
+}

@@ -1,0 +1,89 @@
+@import "./style.scss";
+
+
+
+/** Global **/
+.input-ele{
+    display: flex;
+    flex-direction: column;
+    margin: 0.3rem 0;
+    input, select{
+        border: 1px solid $light_color;
+        padding: 5px 8px;
+        letter-spacing: 0.05em;
+        opacity: 0.6;
+    }
+}
+
+#booking-page {
+  #book-form {
+    max-width: 80%;
+    margin: 1vh auto;
+    form {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 20px 0 $black_color;
+      .banner {
+        position: relative;
+        height: 180px;
+        background-image: url("./assets/dining.jpg");
+        background-size: contain;
+      }
+      .banner::after {
+        content: "";
+        background-color: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      h2{
+        margin: 1rem auto;
+        opacity: 0.5;
+      }
+      .form-row{
+           display: flex;
+           gap: 2rem;
+           .col-1{
+             flex: 5;
+           }
+           .col-2{
+            flex: 5;
+          }
+        label {
+          font-weight: $bold_fw;
+          letter-spacing: 0.05em;
+        }
+
+       
+      }
+      @include responsive($med) {
+       .form-row{
+           flex-direction: column;
+       }
+      }
+      .btn-block{
+         display: flex;
+         justify-content: center;
+         margin: 2vh 0;
+         button{
+             padding: 8px 15px;
+             background-color: $background_color;
+             border-radius: $border_rounded;
+             color: $black_color;
+             font-weight: $bold_fw;
+         }
+         button:hover{
+             cursor: pointer;
+             background-color: teal;
+             opacity: 0.6;
+             color: #fff;
+         }
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,30 @@
+@import "../style.scss";
+
+#reservations {
+  max-width: 98%;
+  margin: 0 auto;
+  #table-container {
+    display: flex;
+    justify-content: center;
+    margin: 3vh 0;
+    table {
+      box-sizing: border-box;
+      box-shadow: $box_shadow;
+      thead {
+        border-bottom: 1px solid $black_color;
+        th {
+          background-color: $background_color;
+          padding: 0.6rem 2rem;
+        }
+      }
+      tbody {
+        tr {
+          td {
+            text-align: center;
+            padding: 8px 2px;
+          }
+        }
+      }
+    }
+  }
+}
