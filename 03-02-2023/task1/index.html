@@ -1,0 +1,188 @@
+<!-- Document Defination ::  Used to define document type.With the help of this browser render the webpage in standered mode-->
+<!DOCTYPE html>
+<!-- Starting or Root Tag:: "lang" attribute define language for document. We can also use 'lang' with any element for differnt language in web page-->
+<html lang="en">
+  <!-- Head Section Start :: Collection meta data(Properties of Web Page) of doc.-->
+  <head>
+    <!-- Encoding Method -->
+    <meta charset="UTF-8" />
+    <!-- It allows to choose internet Explorer browser version."http-equiv" use to make http request according to content given    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- "viewport" help to view document with differnt screen size devices properly -->
+    <meta
+      name="viewport"
+      content="About html boilerplate info"
+      ,
+      initial-scale="1.0"
+    />
+    <!-- fontawesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+      integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+      integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <!-- Description -->
+    <meta name="description" content="CodeStore Tainging Modules" />
+    <!-- It shows the title of webpage in browser. Also web age searched with this title (!Important for SEO). -->
+    <title>Html Task1- 24 Jan 2023</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Hind", sans-serif;
+      }
+    </style>
+  </head>
+  <!-- Head Section Ends -->
+  <!-- Body Tag :: Content of html document will be written here. -->
+  <body>
+    <div class="conatiner">
+      <div class="sidebar">
+        <div class="content">
+          <div class="logo">
+            <img src="../02-02-2023/assets/logo.svg" alt="logo" />
+            <span>Complay Name</span>
+          </div>
+          <div class="sidebar-options">
+            <div class="option">
+              <i class="fa fa-home" aria-hidden="true"></i>
+              <span>Dashborad</span>
+            </div>
+            <div class="option">
+              <i class="fa fa-apple" aria-hidden="true"></i> <span>Apps</span>
+            </div>
+            <div class="option">
+              <i class="fa fa-home" aria-hidden="true"></i> <span>UI Kits</span>
+            </div>
+            <div class="option">
+              <i class="fa fa-columns" aria-hidden="true"></i>
+              <span>Forms</span>
+            </div>
+            <div class="option">
+              <i class="fa fa-graduation-cap" aria-hidden="true"></i
+              ><span>Board</span>
+            </div>
+            <div class="option">
+              <i class="fa fa-registered" aria-hidden="true"></i>
+              <span>Invoice</span>
+            </div>
+            <div class="option">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <span>Calender</span>
+            </div>
+            <div class="option">
+              <i class="fa fa-product-hunt" aria-hidden="true"></i>
+              <span>Products</span>
+            </div>
+            <div class="option">
+              <i class="fa fa-line-chart" aria-hidden="true"></i>
+              <span>Charts</span>
+            </div>
+            <div class="option">
+              <i class="fa fa-home" aria-hidden="true"></i> <span>Table</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <!-- HEADER section -->
+        <section id="header">
+          <div class="left">
+            <div class="search-input">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <input type="text" placeholder="Search" />
+            </div>
+          </div>
+          <div class="right">
+            <nav>
+              <ul>
+                <li><i class="fa fa-bell" aria-hidden="true"></i></li>
+                <li><i class="fa fa-message" aria-hidden="true"></i></li>
+              </ul>
+              <div class="profile">
+                <img src="./assets/download.jpg" alt="logo" />
+              </div>
+            </nav>
+          </div>
+        </section>
+
+        <!-- chart section -->
+        <div id="charts">
+          <div class="selected-path">
+            <div class="left">
+              <h1>Dashborad</h1>
+              <p>Company > Dashorad > Sales</p>
+            </div>
+            <div class="right">
+              <button type="button">Create Report</button>
+            </div>
+          </div>
+          <div id="chart-section">
+            <div class="col-1">
+              <canvas id="myChart" class="chart-box"></canvas>
+            </div>
+            <div class="col-2">
+              <canvas id="pie-chart" class="chart-box"></canvas>
+            </div>
+            <div class="col-3">
+              <canvas id="config-chart" class="chart-box"></canvas>
+            </div>
+          </div>
+        </div>
+        <!-- chart section 2nd -->
+        <div id="row-3">
+          <div class="col-1">
+            <h3>Daily Sales</h3>
+            <canvas id="curve-chart" class="chart-box"></canvas>
+          </div>
+          <div class="col-2">
+            <h3>Summary</h3>
+            <canvas id="horigentle-chart" class="chart-box"></canvas>
+          </div>
+
+          <div class="col-3">
+            <h3>Market Values</h3>
+            <canvas id="radar-chart" class="chart-box"></canvas>
+            <!-- <canvas id="bar-chart" class="chart-box"></canvas> -->
+          </div>
+        </div>
+
+        <!-- 2-column grid -->
+        <div class="" id="row-4">
+            <div class="col-1">
+              <h3>Calender</h3>
+              <p>Here will be calender</p>
+            </div>
+            <div class="col-2">Top Selling Product</div>
+        </div>
+      </div>
+    </div>
+    <!-- Adding external script -->
+    <script src="./dist/main1.js"></script>
+  </body>
+</html>

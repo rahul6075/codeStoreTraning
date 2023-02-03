@@ -19,6 +19,12 @@ h1 {
   font-weight: 700;
 }
 
+h3 {
+  color: #666;
+  letter-spacing: 0.03em;
+  opacity: 0.8;
+}
+
 a {
   color: #192a56;
   font-weight: 600;
@@ -47,6 +53,11 @@ a:hover {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.04em;
+}
+
+.desc {
+  margin: 1.5rem 0;
+  color: #666;
 }
 
 /** Header Csss **/
@@ -166,7 +177,7 @@ header .nav-links ul li span .menu {
   margin: 2rem auto;
   display: grid;
   grid-template-columns: repeat(4, minmax(25rem, 1fr));
-  gap: 1rem;
+  gap: auto;
   grid-auto-rows: auto;
 }
 #services .service-card {
@@ -213,4 +224,203 @@ header .nav-links ul li span .menu {
   border-radius: 50%;
   -o-object-fit: fill;
      object-fit: fill;
+}
+
+#reviews {
+  max-width: 80%;
+  margin: 1vh auto;
+  display: flex;
+}
+#reviews .left {
+  flex: 7;
+}
+#reviews .left img {
+  height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#reviews .left p {
+  text-align: center;
+  font-weight: 600;
+}
+#reviews .right {
+  flex: 5;
+  display: flex;
+  align-items: center;
+}
+#reviews .right .review-auther {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+}
+#reviews .right .review-auther img {
+  width: 35px;
+  height: 35px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 50%;
+  line-height: 35px;
+  border: 1px solid #666;
+}
+#reviews .right .review-auther .review-auther-info {
+  padding: 0 5px;
+}
+#reviews .right .review-auther .review-auther-info h4 {
+  color: #192a56;
+  letter-spacing: 0.02em;
+}
+#reviews .right .review-auther .review-auther-info span {
+  font-size: 12px;
+  color: #666;
+  opacity: 0.8;
+  letter-spacing: 0.01em;
+}
+#reviews .right .rating i {
+  color: darkorange;
+}
+@media (max-width: 768px) {
+  #reviews {
+    flex-direction: column;
+  }
+  #reviews .left img {
+    height: 40vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+/** Contact Section **/
+#contact {
+  max-width: 80%;
+  margin: 10px auto;
+  display: flex;
+  /** Media Quries for mobile Section **/
+}
+#contact .left {
+  flex: 7;
+}
+#contact .left .form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px auto;
+  width: 30vw;
+  padding: 1vh 1vw;
+  border: 1px solid #192a56;
+  border-radius: 5px;
+}
+#contact .left .form-container .form-element {
+  display: flex;
+  flex-direction: column;
+  margin: 5px auto;
+  padding: 10px 0;
+  width: 25vw;
+  /*  Pesudo Element (*) Added After Label */
+}
+#contact .left .form-container .form-element .required {
+  padding: 3px 0;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+#contact .left .form-container .form-element .required::after {
+  content: "*";
+  color: red;
+}
+#contact .left .form-container .form-element input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #192a56;
+  opacity: 0.5;
+  padding: 5px;
+  letter-spacing: 0.05em;
+}
+#contact .left .form-container button {
+  border: none;
+  outline: none;
+  color: #192a56;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  padding: 5px 15px;
+  border-radius: 25px;
+  margin: 10px auto;
+  font-size: 18px;
+}
+#contact .left .form-container button:hover {
+  cursor: pointer;
+  color: #192a56;
+}
+#contact .right {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  #contact {
+    flex-direction: column;
+  }
+  #contact .left .form-container {
+    width: 60vw;
+  }
+  #contact .left .form-container .form-element {
+    width: 45vw;
+  }
+}
+
+/** Footer Section **/
+#footer {
+  background-color: #eee;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  margin-top: 3vh;
+  /** Media Quries for mobile Section **/
+}
+#footer .left {
+  flex: 6;
+  margin: 1vh 4vw;
+}
+#footer .left h3 {
+  color: #192a56;
+  letter-spacing: 0.03em;
+}
+#footer .left p {
+  color: #192a56;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+#footer .center {
+  flex: 3;
+  margin: 1vh 4vw;
+}
+#footer .center .social-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#footer .center .social-icons span {
+  align-items: center;
+  color: #192a56;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+#footer .center .social-icons span i {
+  padding-right: 1vw;
+  color: #192a56;
+  font-size: 20px;
+}
+#footer .right {
+  flex: 3;
+  margin: 1vh 4vw;
+}
+#footer .right .social-icons p {
+  color: #192a56;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+@media (max-width: 768px) {
+  #footer {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=style.css.map */

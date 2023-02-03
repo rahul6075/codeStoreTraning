@@ -39,7 +39,11 @@ $sm: 576px; // mobile and low-res tablets
 h1 {
   font-weight: $bold_fw;
 }
-
+h3{
+  color: $light_color;
+  letter-spacing: 0.03em;
+  opacity: 0.8;
+}
 a {
   color: $black_color;
   font-weight: $semibold_fw;
@@ -66,6 +70,10 @@ a:hover {
    font-size: 14px;
    font-weight: $semibold_fw;
    letter-spacing: 0.04em;
+}
+.desc{
+  margin: 1.5rem 0;
+  color: $light_color;
 }
 
 /** Header Csss **/
@@ -191,7 +199,7 @@ header {
     margin: 2rem auto;
     display: grid;
     grid-template-columns:  repeat(4, minmax(25rem , 1fr));;
-    gap: 1rem;
+    gap: auto;
     grid-auto-rows: auto;
     .service-card {
         display: flex;
@@ -235,6 +243,214 @@ header {
             }
           }
         }
+      } 
+}
+
+
+// Reviews
+
+#reviews{
+  max-width: 80%;
+  margin: 1vh auto;
+  display: flex;
+  .left{
+     flex: 7;
+     img{
+         height: 50vh;
+         object-fit: cover;
+     }
+    p{
+        text-align: center;
+        font-weight: $semibold_fw;
+
+    }
+  }
+  .right{
+    flex: 5;
+    display: flex;
+    align-items: center;
+    .review-auther{
+         margin: 1rem 0;
+         display: flex;
+         align-items: center;
+         img{
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+            border-radius: 50%;
+            line-height: 35px;
+            border: 1px solid $light_color;
+         }
+         .review-auther-info{
+             padding: 0 5px;
+             h4{
+                color: $black_color;
+                letter-spacing: 0.02em;
+             }
+             span{
+                font-size: 12px;
+                color: $light_color;
+                opacity: 0.8;
+                letter-spacing: 0.01em;
+             }
+         }
+    }
+    
+    .rating{
+      i{
+         color : darkorange;
       }
-   
+    }
+  }
+
+  @include responsive($med) {
+    flex-direction: column;
+    .left {
+      img{
+        height: 40vh;
+        object-fit: cover;
+    }
+    }
+  }
+}
+
+
+/** Contact Section **/
+#contact {
+  max-width: 80%;
+  margin: 10px auto;
+  display: flex;
+  .left {
+    flex: 7;
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 10px auto;
+      width: 30vw;
+      padding: 1vh 1vw;
+      border: 1px solid $black_color;
+      border-radius: 5px;
+      .form-element {
+        display: flex;
+        flex-direction: column;
+        margin: 5px auto;
+        padding: 10px 0;
+        width: 25vw;
+        .required {
+          padding: 3px 0;
+          letter-spacing: 0.04em;
+          font-weight: 700;
+        }
+        /*  Pesudo Element (*) Added After Label */
+        .required::after {
+          content: "*";
+          color: red;
+        }
+        input {
+          border: none;
+          outline: none;
+          border-bottom: 1px solid $black_color;
+          opacity: 0.5;
+          padding: 5px;
+          letter-spacing: 0.05em;
+        }
+      }
+      button {
+        border: none;
+        outline: none;
+        color: $black_color;
+        letter-spacing: 0.06em;
+        font-weight: 700;
+        padding: 5px 15px;
+        border-radius: $border_rounded;
+        margin: 10px auto;
+        font-size: 18px;
+      }
+      button:hover {
+        cursor: pointer;
+        color: $black_color;
+      }
+    }
+  }
+  .right {
+    flex: 5;
+    // margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /** Media Quries for mobile Section **/
+  @include responsive($med) {
+    flex-direction: column;
+    .left {
+      .form-container {
+        width: 60vw;
+        .form-element {
+          width: 45vw;
+        }
+      }
+    }
+  }
+}
+
+/** Footer Section **/
+
+#footer {
+  background-color: $background_color;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  margin-top: 3vh;
+  .left {
+    flex: 6;
+    margin: 1vh 4vw;
+    h3 {
+      color: $black_color;
+      letter-spacing: 0.03em;
+    }
+    p {
+      color: $black_color;
+      letter-spacing: 0.03em;
+      font-weight: 500;
+    }
+  }
+  .center {
+    flex: 3;
+    margin: 1vh 4vw;
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      span {
+        align-items: center;
+        color: $black_color;
+        letter-spacing: 0.03em;
+        font-weight: 500;
+        i {
+          padding-right: 1vw;
+          color: $black_color;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .right {
+    flex: 3;
+    margin: 1vh 4vw;
+    .social-icons {
+      p {
+        color: $black_color;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+      }
+    }
+  }
+
+  /** Media Quries for mobile Section **/
+  @include responsive($med) {
+    flex-direction: column;
+  }
 }

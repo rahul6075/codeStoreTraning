@@ -9,7 +9,6 @@
  *     (ii) Give booking Service from  avalable services
  *     (iii) Check Avalibity of booking.
  *     (iv)   Provide Menu And booking Status
- *
  * */
 var BookingStatus;
 (function (BookingStatus) {

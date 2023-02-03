@@ -1,0 +1,175 @@
+/** Variable Declearation **/
+/** Screen Sizes **/
+/** Responsive Media Query Mixin **/
+/*** Global  SCSS ***/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Arvo", serif;
+  font-family: "Hind", sans-serif;
+  font-family: "Maven Pro", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  transition: all 0.2s linear;
+}
+
+i {
+  color: #64c5b1;
+  font-size: 20px;
+}
+
+.conatiner {
+  display: flex;
+}
+.conatiner .sidebar {
+  flex: 2;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 100vh;
+}
+.conatiner .sidebar .content {
+  margin: 1vh auto;
+}
+.conatiner .sidebar .content .logo {
+  display: flex;
+  align-items: center;
+}
+.conatiner .sidebar .content .logo img {
+  width: 25px;
+  height: 25px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  line-height: 35px;
+}
+.conatiner .sidebar .content .sidebar-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.conatiner .sidebar .content .sidebar-options .option {
+  display: flex;
+  justify-content: flex-start;
+  margin: 1rem 0;
+}
+.conatiner .sidebar .content .sidebar-options .option i {
+  color: #64c5b1;
+}
+.conatiner .sidebar .content .sidebar-options .option span {
+  padding: 0 10px;
+  text-align: left;
+  color: #666;
+  font-weight: 700;
+}
+.conatiner .main {
+  flex: 10;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: auto;
+}
+.conatiner .main #header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+}
+.conatiner .main #header .left {
+  display: flex;
+  align-items: center;
+  border: 1px solid #eee;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+}
+.conatiner .main #header .left .search-input input {
+  min-width: 30vw;
+  align-items: center;
+  opacity: 0.8;
+  color: #192a56;
+  padding: 4px 8px;
+}
+.conatiner .main #header .right nav {
+  display: flex;
+  align-items: center;
+}
+.conatiner .main #header .right nav ul li {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0 1rem;
+}
+.conatiner .main #header .right .profile {
+  padding: 0 5px;
+}
+.conatiner .main #header .right .profile img {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  border: 1px solid #666;
+}
+.conatiner .main #charts .selected-path {
+  padding: 1vh 1.5vw;
+  height: 18vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: #64c5b1;
+}
+.conatiner .main #charts .selected-path .left {
+  color: #ffffff;
+}
+.conatiner .main #charts .selected-path .right button {
+  padding: 10px 15px;
+  font-weight: 700;
+  color: #192a56;
+  letter-spacing: 0.05em;
+  border-radius: 25px;
+}
+.conatiner .main #charts #chart-section {
+  display: grid;
+  padding: 1vh 1vw;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  gap: 1rem;
+  grid-auto-rows: auto;
+}
+.conatiner .main #charts #chart-section .col-1 {
+  max-height: 35rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+.conatiner .main #charts #chart-section .col-2 {
+  max-height: 35rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+.conatiner .main #row-3 {
+  margin: 1vh 0;
+  display: grid;
+  padding: 1vh 1vw;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  gap: 1rem;
+  grid-auto-rows: auto;
+}
+.conatiner .main #row-3 .col-1 {
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+.conatiner .main #row-3 .col-2 {
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+.conatiner .main #row-3 .col-3 {
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+.conatiner .main #row-4 {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 1fr;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.conatiner .main #row-4 .col-1 {
+  background-color: red;
+  height: 30vh;
+}
+.conatiner .main #row-4 .col-2 {
+  background-color: blue;
+  height: 30vh;
+}/*# sourceMappingURL=style.css.map */

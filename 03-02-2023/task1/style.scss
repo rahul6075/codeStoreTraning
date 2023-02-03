@@ -1,0 +1,205 @@
+/** Variable Declearation **/
+$base_color: #64c5b1;
+$background_color: #ffffff;
+$black_color: #192a56;
+$light_color: #666;
+$border_circle: 50%;
+$border_rounded: 25px;
+$bold_fw: 700;
+$semibold_fw: 600;
+$text_fw: 400;
+$box_shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+$heading_sz: 25px;
+/** Screen Sizes **/
+$xl: 1200px; // 4k and hi-res desktop
+$lg: 992px; // 1080 and hi-res laptops
+$med: 768px; // hi-res tablets and low-res laptops
+$sm: 576px; // mobile and low-res tablets
+
+/** Responsive Media Query Mixin **/
+@mixin responsive($query) {
+  @media (max-width: $query) {
+    @content;
+  }
+}
+
+/*** Global  SCSS ***/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Arvo", serif;
+  font-family: "Hind", sans-serif;
+  font-family: "Maven Pro", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  transition: all 0.2s linear;
+}
+
+i {
+  color: $base_color;
+  font-size: 20px;
+}
+
+.conatiner {
+  display: flex;
+  .sidebar {
+    flex: 2;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 100vh;
+    .content {
+      margin: 1vh auto;
+      .logo {
+        display: flex;
+        align-items: center;
+        img {
+          width: 25px;
+          height: 25px;
+          object-fit: contain;
+          line-height: 35px;
+        }
+      }
+      .sidebar-options {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 2rem 0;
+        .option {
+          display: flex;
+          justify-content: flex-start;
+          margin: 1rem 0;
+          i {
+            color: $base_color;
+          }
+          span {
+            padding: 0 10px;
+            text-align: left;
+            color: $light_color;
+            font-weight: $bold_fw;
+          }
+        }
+      }
+    }
+  }
+  .main {
+    flex: 10;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: auto;
+    #header {
+      display: flex;
+      justify-content: space-between;
+      padding: 2rem 1rem;
+      .left {
+        display: flex;
+        align-items: center;
+        border: 1px solid #eee;
+        padding: 0.5rem 1rem;
+        border-radius: $border_rounded;
+        .search-input {
+          input {
+            min-width: 30vw;
+            align-items: center;
+            opacity: 0.8;
+            color: $black_color;
+            padding: 4px 8px;
+          }
+        }
+      }
+      .right {
+        nav {
+          display: flex;
+          align-items: center;
+          ul {
+            li {
+              display: inline-block;
+              text-decoration: none;
+              padding: 0 1rem;
+            }
+          }
+        }
+        .profile {
+          padding: 0 5px;
+          img {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            border: 1px solid $light_color;
+          }
+        }
+      }
+    }
+    #charts {
+      .selected-path {
+        padding: 1vh 1.5vw;
+        height: 18vh;
+        display: flex;
+        justify-content: space-between;
+        background-color: $base_color;
+        .left {
+          color: $background_color;
+        }
+        .right {
+          button {
+            padding: 10px 15px;
+            font-weight: $bold_fw;
+            color: $black_color;
+            letter-spacing: 0.05em;
+            border-radius: $border_rounded;
+          }
+        }
+      }
+      #chart-section {
+        display: grid;
+        padding: 1vh 1vw;
+        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+        gap: 1rem;
+        grid-auto-rows: auto;
+        .col-1 {
+          max-height: 35rem;
+          box-shadow: $box_shadow;
+        }
+        .col-2 {
+          max-height: 35rem;
+          box-shadow: $box_shadow;
+        }
+      }
+    }
+    #row-3 {
+      margin: 1vh 0;
+      display: grid;
+      padding: 1vh 1vw;
+      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+      gap: 1rem;
+      grid-auto-rows: auto;
+      .col-1 {
+        box-shadow: $box_shadow;
+      }
+      .col-2 {
+        box-shadow: $box_shadow;
+      }
+      .col-3 {
+        box-shadow: $box_shadow;
+      }
+    }
+    #row-4 {
+      display: grid;
+      grid-template-columns: 40% 60%;
+      grid-template-rows: 1fr;
+      column-gap: 20px;
+      .col-1 {
+        background-color: red;
+        height: 30vh;
+      }
+      .col-2 {
+        background-color: blue;
+        height: 30vh;
+      }
+    }
+  }
+}
