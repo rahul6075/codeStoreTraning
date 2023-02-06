@@ -63,15 +63,29 @@ var Restorant = /** @class */ (function () {
                 data: [],
             };
         }
-        this._booking_record.push(data);
-        return {
-            status: 200,
-            msg: "Booking is Successfull.",
-            data: this._booking_record,
-        };
+        if (this._noOfTables > 0) {
+            this._booking_record.push(data);
+            this._noOfTables--;
+            console.log(this._noOfTables);
+            return {
+                status: 200,
+                msg: "Booking is Successfull.",
+                data: this._booking_record,
+            };
+        }
+        else {
+            return {
+                status: 200,
+                msg: "No Table Avalable",
+                data: this._booking_record,
+            };
+        }
     };
     Restorant.prototype.getBookingRecord = function () {
         return this._booking_record;
+    };
+    Restorant.prototype.checkAvalibity = function () {
+        return this._noOfTables;
     };
     return Restorant;
 }());
@@ -80,11 +94,12 @@ var service1 = new Service(1, "Dining", "Date Dinner", 10000, "It a special dine
 var service2 = new Service(2, "Dining", "Business Dinner", 50000, "It a special diner menu for Business.");
 var service3 = new Service(3, "Lunch", "Formal", 5000, "It a luch service.");
 // Create Restorant
-var restorant = new Restorant("0145", 19, [], []);
+var restorant = new Restorant("0145", 5, [], []);
 // Add services to restorant
 restorant.addServceToRestorant(service1);
 restorant.addServceToRestorant(service2);
 restorant.addServceToRestorant(service3);
+console.log(restorant.checkAvalibity());
 // Dealing with Form
 var id = 0;
 var getDataFormStorage = JSON.parse(localStorage.getItem("data"));
@@ -105,6 +120,10 @@ form.addEventListener("submit", function (e) {
         var attendies = formData.get("attendies");
         var table_number = formData.get("table_number");
         var reservation_type = formData.get("reservation-type");
+        if (first_name === "" || email === "" || contact === "" || booking_date === "" || booking_time === "" || attendies === "") {
+            document.getElementById("msg").innerHTML = "Please fill the complete form";
+            return;
+        }
         var bookingObj = {
             id: id++,
             first_name: first_name,
@@ -118,11 +137,15 @@ form.addEventListener("submit", function (e) {
             reservation_type: reservation_type,
             status: 0,
         };
-        if (!(bookingData === null || bookingData === void 0 ? void 0 : bookingData.includes(bookingObj))) {
+        console.log(restorant.checkAvalibity());
+        if (restorant.checkAvalibity() > 0) {
             var newBooking = new Reservation(bookingObj);
             var response = restorant.bookTable(newBooking);
             localStorage.setItem("data", JSON.stringify(response.data));
             document.getElementById("msg").innerHTML = response.msg;
+        }
+        else {
+            document.getElementById("msg").innerHTML = "Tables are not available";
         }
     }
     catch (err) {

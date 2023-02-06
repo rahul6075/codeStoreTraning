@@ -9,7 +9,7 @@ window.addEventListener("load", () =>{
           <tr class="table-row" key=${item.id}>
           <td>${item.id}</td>
           <td>${item.first_name} </td>
-          <td>${item.contact}</td>
+          <td>${item.last_name}</td>
           <td>${item.email}</td>
           <td>${item.attendies}</td>
           <td>${item.booking_date}</td>
