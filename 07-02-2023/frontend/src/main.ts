@@ -12,19 +12,7 @@ var loadFile = function (event) {
   reader.readAsDataURL(event.target.files[0]);
 };
 
-function uploadimage(){
-  let result = null;
-   const selectedFile = document.querySelector('#input') as HTMLFormElement;
-  const formData = new FormData();
-  formData.append("testImg", selectedFile.files[0]);
-  fetch("http://localhost:3000/upload", {
-    method: 'POST',
-    body: formData,
-}).then((res) => res.json()).then(data =>{
-     result = data;
-});
-return result;
-}
+
 
 function upload() {
     //get the input and the file
@@ -39,7 +27,6 @@ function upload() {
        body: fd,
     });
     promise.then(res => console.log(res.json()));
-   
 }
 
 const form = document.querySelector("#student-form") as HTMLFormElement;
@@ -50,7 +37,7 @@ form.addEventListener("submit", function (e) {
     let arr = Array.from(formData.entries());
     let validation = vaidateFormInput(arr);
     if (validation.status === 200) {
-      upload();
+    
     
       // let payload = {
       //   first_name: arr[1][1],

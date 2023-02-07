@@ -11,19 +11,6 @@ var loadFile = function (event) {
     };
     reader.readAsDataURL(event.target.files[0]);
 };
-function uploadimage() {
-    var result = null;
-    var selectedFile = document.querySelector('#input');
-    var formData = new FormData();
-    formData.append("testImg", selectedFile.files[0]);
-    fetch("http://localhost:3000/upload", {
-        method: 'POST',
-        body: formData,
-    }).then(function (res) { return res.json(); }).then(function (data) {
-        result = data;
-    });
-    return result;
-}
 function upload() {
     //get the input and the file
     var input = document.querySelector('input[type=file]'), file = input.files[0];
@@ -46,7 +33,6 @@ form.addEventListener("submit", function (e) {
         var arr = Array.from(formData.entries());
         var validation = vaidateFormInput(arr);
         if (validation.status === 200) {
-            upload();
             // let payload = {
             //   first_name: arr[1][1],
             //   last_name: arr[2][1],
