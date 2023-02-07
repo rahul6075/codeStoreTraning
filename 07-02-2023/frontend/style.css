@@ -1,0 +1,117 @@
+/** Header Csss **/
+header {
+  position: static;
+  top: 0;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 3em;
+}
+header .nav-left {
+  float: left;
+}
+header .nav-left .logo {
+  font-size: 25px;
+  font-weight: 700;
+  color: #192a56;
+}
+header .nav-links {
+  float: right;
+}
+header .nav-links ul {
+  display: block;
+}
+header .nav-links ul li {
+  display: inline-block;
+  padding: 5px 20px;
+}
+header .nav-links ul li span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 5px;
+  border: 1px solid #666;
+  border-radius: 25px;
+}
+header .nav-links ul li span .menu {
+  display: block;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+.container{
+    max-width: 80%;
+    margin: 2vh auto;
+}
+
+.text-center{
+   text-align: center;
+}
+.box{
+    margin: 1vh auto;
+    border: 1px solid #eee;
+    padding: 5px 15px;
+    max-width: 50rem;
+
+}
+.form-element{
+    display: flex;
+    justify-content:space-between;
+    margin: 15px 0;
+    align-items: center;
+}
+
+.lbl{
+   flex: 3;
+}
+.lbl>label{
+  font-weight: 700;
+  letter-spacing: 0.05em;
+
+}
+
+.input-ele{
+   flex: 9;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+
+.input-ele > input, textarea, select{
+   border: none;
+   outline: none;
+   border: 1px solid teal;
+   opacity: 0.5;
+   padding: 5px;
+   letter-spacing: 0.05em;
+}
+
+.err-message{
+   color: red;
+   font-size: 13px;
+   letter-spacing: 0.03em;
+}
+
+.btn{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.btn > button{
+   border: none;
+       outline: none;
+       color: teal;
+       letter-spacing: 0.06em;
+       font-weight: 700;
+       padding: 5px 15px;
+       border-radius: 25px;
+       margin: 10px auto;
+       font-size: 18px;
+}
+
+#output{
+    width: 10rem;
+    height: 10rem;
+    object-fit: fill;
+    margin-left: 5px;
+}

@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors=require("cors");
 const Post = require("./models/post");
 const app = express();
+
 app.use(express.json());
 const corsOptions ={
     origin:'*', 

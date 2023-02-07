@@ -161,7 +161,7 @@ const service2 = new Service(
 );
 const service3 = new Service(3, "Lunch", "Formal", 5000, "It a luch service.");
 // Create Restorant
-const restorant = new Restorant("0145", 5, [], []);
+const restorant = new Restorant("0145", 0, [], []);
 // Add services to restorant
 restorant.addServceToRestorant(service1);
 restorant.addServceToRestorant(service2);
@@ -222,3 +222,17 @@ form.addEventListener("submit", (e) => {
     console.log(err);
   }
 });
+
+
+function checkAvalibityTable(){
+     try {
+         let tables = restorant.checkAvalibity();
+         if(tables > 0){
+             document.getElementById("availibility_err").innerHTML = `${tables} tables are available`;
+         }else{
+            throw "Tables are not Available."
+         }
+     } catch (err) {
+         document.getElementById("availibility_err").innerHTML = err;
+     }
+}

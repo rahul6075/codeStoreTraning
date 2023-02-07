@@ -94,7 +94,7 @@ var service1 = new Service(1, "Dining", "Date Dinner", 10000, "It a special dine
 var service2 = new Service(2, "Dining", "Business Dinner", 50000, "It a special diner menu for Business.");
 var service3 = new Service(3, "Lunch", "Formal", 5000, "It a luch service.");
 // Create Restorant
-var restorant = new Restorant("0145", 5, [], []);
+var restorant = new Restorant("0145", 0, [], []);
 // Add services to restorant
 restorant.addServceToRestorant(service1);
 restorant.addServceToRestorant(service2);
@@ -152,3 +152,17 @@ form.addEventListener("submit", function (e) {
         console.log(err);
     }
 });
+function checkAvalibityTable() {
+    try {
+        var tables = restorant.checkAvalibity();
+        if (tables > 0) {
+            document.getElementById("availibility_err").innerHTML = "".concat(tables, " tables are available");
+        }
+        else {
+            throw "Tables are not Available.";
+        }
+    }
+    catch (err) {
+        document.getElementById("availibility_err").innerHTML = err;
+    }
+}

@@ -48,9 +48,13 @@
   <body>
     <div id="booking-page">
       <div id="book-form">
-       
+         
         <form method="post" class="form-control" id="booking-form">
           <div class="banner"></div>
+          <div class="btn-block">
+            <button type="button" onclick="checkAvalibityTable()">Check Avalibility</button>
+            <span class="err-message" id="availibility_err"></span>
+          </div>
           <h2 class="text-center">Book Your Table</h2>
           <!-- Single Row -->
           <div class="form-row">

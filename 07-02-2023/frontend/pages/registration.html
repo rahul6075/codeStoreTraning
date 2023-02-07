@@ -1,0 +1,134 @@
+<!-- Document Defination ::  Used to define document type.With the help of this browser render the webpage in standered mode-->
+<!DOCTYPE html>
+<!-- Starting or Root Tag:: "lang" attribute define language for document. We can also use 'lang' with any element for differnt language in web page-->
+<html lang="en">
+  <!-- Head Section Start :: Collection meta data(Properties of Web Page) of doc.-->
+  <head>
+    <!-- Encoding Method -->
+    <meta charset="UTF-8" />
+    <!-- It allows to choose internet Explorer browser version."http-equiv" use to make http request according to content given    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- "viewport" help to view document with differnt screen size devices properly -->
+    <meta
+      name="viewport"
+      content="About html boilerplate info"
+      ,
+      initial-scale="1.0"
+    />
+    <!-- fontawesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+      integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css">
+    <!-- Description -->
+    <meta name="description" content="CodeStore Tainging Modules" />
+    <!-- It shows the title of webpage in browser. Also web age searched with this title (!Important for SEO). -->
+    <title>Html Task- 7 Feb Jan 2023</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Hind", sans-serif;
+      }
+    </style>
+  </head>
+  <!-- Head Section Ends -->
+  <!-- Body Tag :: Content of html document will be written here. -->
+  <body>
+     
+    <!-- Adding external script -->
+    <div class="container">
+
+        <form id="student-form" class="form-container">
+            <h1 class="text-center">Student Registration Form</h1>
+            <div class="box">
+                <div class="form-element">
+                    <div class="lbl"> <label for="first_name" class="required">Photo</label></div>
+                    <div class="input-ele">
+                        <input type="file" id="input" multiple onchange="loadFile(event)" />
+                        <span class="err-message" id="photo_err"></span>
+                    </div>
+                    <img id="output"/>
+                </div>
+                <div class="form-element">
+                    <div class="lbl"> <label for="first_name" class="required">First Name</label></div>
+                    <div class="input-ele">
+                        <input type="text" id="first_name" name="first_name" class="form-input" />
+                        <span class="err-message" id="first_name_err"></span>
+                    </div>
+                </div>
+                <div class="form-element">
+                    <div class="lbl"><label for="last_name" class="required">Last Name</label></div>
+                    <div class="input-ele">
+                        <input type="text" id="last_name" name="last_name" />
+                        <span class="err-message"id="last_name_err"></span>
+                    </div>
+                </div>
+                <div class="form-element">
+                    <div class="lbl"> <label for="contact" class="required ">Phone Number</label></div>
+                    <div class="input-ele">
+                        <input type="text" id="contact" name="contact" />
+                        <span class="err-message" id="contact_err"></span>
+                    </div>
+                </div>
+                <div class="form-element">
+                    <div class="lbl"> <label for="email" class="required">Email</label></div>
+                    <div class="input-ele">
+                        <input type="text" id="email" name="email" />
+                        <span class="err-message" id="email_err"></span>
+                    </div>
+                </div>
+                <div class="form-element">
+                    <div class="lbl"> <label for="password" class="required">Password</label></div>
+                    <div class="input-ele">
+                        <input type="text" id="password" name="password" />
+                        <span class="err-message" id="password_err"></span>
+                    </div>
+                </div>
+                <div class="form-element">
+                    <div class="lbl"> <label for="time" class="label">Gender</label></div>
+                    <div class="input-ele">
+                        <select name="gender" id="gender-input" class="form-input">
+                            <option value="">--Please choose an option--</option>
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                        <span class="err-message" id="gender_err"></span>
+                    </div>
+                </div>
+                <div class="form-element">
+                    <div class="lbl">
+                        <label for="address" class="required">Address</label>
+                    </div>
+                    <div class="input-ele">
+                        <input type="text" name="address" id="address"></input>
+                        <span class="err-message"></span>
+                    </div>
+                </div>
+                <div class="btn">
+                    <button type="submit" class="form_submit">Submit</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <script src="../dist/main.js"></script>
+  </body>
+</html>
