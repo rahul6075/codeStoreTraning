@@ -55,16 +55,15 @@
      
     <!-- Adding external script -->
     <div class="container">
-
+        <h1 id="message-res"></h1>
         <form id="student-form" class="form-container">
             <h1 class="text-center">Student Registration Form</h1>
             <div class="box">
                 <div class="form-element">
                     <div class="lbl"> <label for="profile" class="required">Photo</label></div>
                     <div class="input-ele">
-                        <input type="file" id="input" multiple onchange="loadFile(event)" for="profile" />
+                        <input type="file" id="input" onchange="loadFile(event)" for="profile" />
                         <span class="err-message" id="photo_err"></span>
-                        <button type="button" onclick="upload()">Upload</button>
                     </div>
                     <img id="output"/>
                 </div>

@@ -47,10 +47,10 @@ header .nav-links ul li span .menu {
    text-align: center;
 }
 .box{
-    margin: 1vh auto;
-    border: 1px solid #eee;
+    margin: 10px auto;
     padding: 5px 15px;
     max-width: 50rem;
+    border: 1px solid #eee;
 
 }
 .form-element{

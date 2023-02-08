@@ -5,7 +5,7 @@ const {userRegistration, userLogin, getUserDetails, addSubject} = require('../co
 
 router.post('/registration',  userRegistration)
 router.post('/login',  userLogin);
-router.get('/getUser',  getUserDetails);
-router.post('/addSubject',  addSubject);
+router.get('/getUser/:id',  getUserDetails);
+router.post('/addSubject/:id',  addSubject);
 
 module.exports = router;

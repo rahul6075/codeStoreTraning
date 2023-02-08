@@ -10,10 +10,6 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
-    imageId: {
-      type: String,
-      required: true,
-    },
     contact: {
       type: String,
       required: true,
@@ -34,25 +30,22 @@ const userSchema = new mongoose.Schema(
       type: Number,
       default: 1,
     },
-    subjects: {
-      type: Array,
-      default: [
-        {
-          name: {
-             type: String,
-             default: null,
-          },
-          marksObitained:{
-             type: Number,
-             default: 0
-          },
-          max:{
-            type:Number,
-            default: 100,
-          }
+    subjects:[
+      {
+        name: {
+           type: String,
+           default: null,
+        },
+        marksObitained:{
+           type: Number,
+           default: 0
+        },
+        max:{
+          type:Number,
+          default: 100,
         }
-      ],
-    },
+      }
+    ],
   },
   { timestamps: true }
 );

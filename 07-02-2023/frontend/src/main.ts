@@ -12,54 +12,57 @@ var loadFile = function (event) {
   reader.readAsDataURL(event.target.files[0]);
 };
 
-
-
-function upload() {
-    //get the input and the file
-    var input = document.querySelector('input[type=file]') as HTMLFormElement,
-    file = input.files[0];
-    if (!file || !file.type.match(/image.*/)) return;
-    //Creates the FormData object and attach to a key name "file"
-    var fd = new FormData();
-    fd.append("testImg", file);
-    const promise = fetch('http://localhost:3000/upload', {
-       method: 'POST',
-       body: fd,
-    });
-    promise.then(res => console.log(res.json()));
-}
-
 const form = document.querySelector("#student-form") as HTMLFormElement;
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
   try {
     const formData = new FormData(form);
     let arr = Array.from(formData.entries());
-    let validation = vaidateFormInput(arr);
+    let validation =  vaidateFormInput(arr);
     if (validation.status === 200) {
-    
-    
-      // let payload = {
-      //   first_name: arr[1][1],
-      //   last_name: arr[2][1],
-      //   contact: arr[3][1],
-      //   email: arr[4][1],
-      //   password: arr[5][1],
-      //   address: arr[7][1],
-      //   gender: arr[6][1],
-      // };
+      let payload = {
+        first_name: arr[0][1],
+        last_name: arr[1][1],
+        contact: arr[2][1],
+        email: arr[3][1],
+        password: arr[4][1],
+        address: arr[6][1],
+        gender: arr[5][1],
+      };
       // console.log(payload);
-      // const promise = fetch("http://localhost:3000/api/user/registration", {
-      //   method: "POST",
-      //   body: JSON.stringify(payload),
-      //   headers: {
-      //     "Content-type": "application/json;  charset=UTF-8",
-      //   },
-      // });
-      // promise.then((res) => console.log(res.json()));
-    }
+       const res = await fetch("http://localhost:3000/api/user/registration", {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+          "Content-type": "application/json;  charset=UTF-8",
+        },
+      })
 
-    // alert("Form Submitted Successfully.")
+      const body = await res.json();
+      console.log(body)
+      if(body.status === 200){
+         let userId = body.data.id;
+         var input  = document.querySelector('#input') as HTMLInputElement,
+         file = input.files[0];
+         if (!file || !file.type.match(/image.*/)) throw {
+          status: 404,
+          message:"Please upload Image."
+        };
+       
+        var fd = new FormData();
+        fd.append("testImg", file);
+        fd.append("userId", userId);
+        const res = await fetch('http://localhost:3000/upload', {
+           method: 'POST',
+           body: fd,
+        });
+        if(res.status === 200){
+          localStorage.setItem("User", JSON.stringify(body.data));
+          document.getElementById("message-res").innerHTML ="User Regsirtation Successfull"
+          form.reset();
+        } 
+      }
+    }
   } catch (err) {
     console.log(err);
   }
@@ -80,7 +83,7 @@ function vaidateFormInput(data) {
             document.getElementById("first_name_err").innerHTML =
               "Please enter a valid first name";
             removeError("first_name_err");
-            throw "Vlidation Error";
+           
           }
           break;
         case "last_name": {
@@ -88,7 +91,7 @@ function vaidateFormInput(data) {
             document.getElementById("last_name_err").innerHTML =
               "Please enter a valid last name";
             removeError("last_name_err");
-            throw "Vlidation Error";
+           
           }
           break;
         }
@@ -97,7 +100,7 @@ function vaidateFormInput(data) {
             document.getElementById("email_err").innerHTML =
               "Please Enter a Valid Email";
             removeError("email_err");
-            throw "Vlidation Error";
+          
           }
           break;
         }
@@ -114,7 +117,7 @@ function vaidateFormInput(data) {
             document.getElementById("password_err").innerHTML =
               "Strong Password Required.";
             removeError("password_err");
-            throw "Vlidation Error";
+           
           }
           break;
         case "gender":
@@ -122,7 +125,6 @@ function vaidateFormInput(data) {
             document.getElementById("gender_err").innerHTML =
               "It is a required feild";
             removeError("gender_err");
-            throw "Vlidation Error";
           }
       }
     });
@@ -134,7 +136,7 @@ function vaidateFormInput(data) {
     console.log(err);
     return {
       status: 500,
-      message: err,
+      message: "Vlidation Error",
     };
   }
 }
@@ -144,3 +146,6 @@ function removeError(id) {
     document.getElementById(id).innerHTML = "";
   }, 3000);
 }
+
+
+

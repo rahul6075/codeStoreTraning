@@ -36,7 +36,7 @@
       href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
     <!-- Description -->
     <meta name="description" content="CodeStore Tainging Modules" />
     <!-- It shows the title of webpage in browser. Also web age searched with this title (!Important for SEO). -->
@@ -47,40 +47,87 @@
         padding: 0;
         font-family: "Hind", sans-serif;
       }
+
     </style>
   </head>
   <!-- Head Section Ends -->
   <!-- Body Tag :: Content of html document will be written here. -->
   <body>
-     
     <!-- Adding external script -->
     <header>
-        <div class="nav-left">
-          <div class="logo">
-            <span><i class="fa-solid fa-book"></i>Sudent Portal</span>
-          </div>
+      <div class="nav-left">
+        <div class="logo">
+          <span><i class="fa-solid fa-book"></i>Sudent Portal</span>
         </div>
-        <nav class="nav-links">
-          <ul class="nav-items">
-            <li class="nav-item"><a href="/">AboutUs</a></li>
-            <li class="nav-item"><a href="../feed/Feed.html">Home</a></li>
-            <li class="nav-item">
-              <a href="./reservations/index.html">Students</a>
-            </li>
-            <li class="nav-item">
-              <span class="user-btn"
-                ><a href="./pages/registration.html"
-                  ><i class="fa-solid fa-circle-user"></i>Reg/Login</a
-                >
-                <i class="fas fa-bars menu" onclick="toggleMenu()"></i>
-              </span>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <div class="container">
-          <h1>This is a Student Crud Operations Task</h1>
       </div>
-    <script src="./dist/main.js"></script>
+      <nav class="nav-links">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="/">AboutUs</a></li>
+          <li class="nav-item"><a href="../feed/Feed.html">Home</a></li>
+          <li class="nav-item">
+            <a href="./pages/studentdetails.html">Students Details</a>
+          </li>
+          <li class="nav-item">
+            <span class="user-btn"
+              ><a href="./pages/registration.html"
+                ><i class="fa-solid fa-circle-user"></i>Reg/Login</a
+              >
+              <i class="fas fa-bars menu" onclick="toggleMenu()"></i>
+            </span>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="btn">
+        <button type="button" id="add-subject" class="text-center">Add Subject</button>
+      </div>
+      <form id="subject-form" class="form-container"> 
+        <div id="box">
+
+        </div>
+         
+            <!-- <div class="form-element">
+              <div class="lbl">
+                <label for="subject_name" class="required">Subject Name</label>
+              </div>
+              <div class="input-ele">
+                <input
+                  type="text"
+                  id="subject_name"
+                  name="subject_name"
+                  class="form-input"
+                />
+                <span class="err-message" id="subject_name_err"></span>
+              </div>
+            </div>
+            <div class="form-element">
+              <div class="lbl">
+                <label for="marks" class="required">Marks Obitained</label>
+              </div>
+              <div class="input-ele">
+                <input type="number" id="marks" name="marks" />
+                <span class="err-message" id="marks_err"></span>
+              </div>
+            </div>
+            <div class="form-element">
+              <div class="lbl">
+                <label for="max_marks" class="required">Max Marks</label>
+              </div>
+              <div class="input-ele">
+                <input type="number" id="max_marks" name="max_marks" />
+                <span class="err-message" id="max_marks_err"></span>
+              </div>
+            </div>
+           
+          </div> -->
+
+      
+        <div class="btn">
+          <button type="submit" class="form_submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script src="./dist/main1.js"></script>
   </body>
 </html>

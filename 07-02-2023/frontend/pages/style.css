@@ -1,0 +1,43 @@
+
+#reservations {
+    max-width: 98%;
+    margin: 0 auto;
+  }
+  #reservations #table-container {
+    display: flex;
+    justify-content: center;
+    margin: 3vh 0;
+  }
+  #reservations #table-container table {
+    box-sizing: border-box;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  }
+  #reservations #table-container table thead {
+    border-bottom: 1px solid #192a56;
+  }
+  #reservations #table-container table thead th {
+    background-color: #eee;
+    padding: 0.6rem 2rem;
+  }
+  #reservations #table-container table tbody tr td {
+    text-align: center;
+    padding: 8px 2px;
+  }/*# sourceMappingURL=style.css.map */
+
+  .container{
+     max-width: 90%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+  }
+
+  .row{
+     display: flex;
+  }
+  .col-1{
+     flex: 8;
+  }
+  .col-2{
+    flex: 4;
+  }
+
