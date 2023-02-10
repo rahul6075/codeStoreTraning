@@ -39,13 +39,12 @@ var userData = JSON.parse(localStorage.getItem("User"));
 var details = JSON.parse(localStorage.getItem("details")) !== null ? JSON.parse(localStorage.getItem("details")) : {};
 window.addEventListener("load", function () {
     getUserDetails(userData.id);
-    console.log("fdsfdf", details);
-    document.querySelector("#name").innerHTML = details.first_name + " " + details.last_name;
-    document.querySelector("#email").innerHTML = details.email;
+    document.querySelector("#name").innerHTML = userData.first_name + " " + details.last_name;
+    document.querySelector("#email").innerHTML = userData.email;
     document.querySelector("#contact").innerHTML = details.contact;
     var img = document.getElementById("img");
-    img.setAttribute("src", "data:".concat(details.image.contentType, ";base64,").concat(details.image.data.data.toString('base64')));
-    showData(details.subjects);
+    img.setAttribute("src", "../../backend2/uploads/".concat(details.data.image));
+    showData(details.data.data);
 });
 var getUserDetails = function (id) { return __awaiter(_this, void 0, void 0, function () {
     var res, data, err_1;
@@ -53,7 +52,7 @@ var getUserDetails = function (id) { return __awaiter(_this, void 0, void 0, fun
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 4, , 5]);
-                return [4 /*yield*/, fetch("http://localhost:3000/api/user/getUser/".concat(id), {
+                return [4 /*yield*/, fetch("http://localhost:3000/api/user/getSubjects/".concat(id), {
                         method: "GET"
                     })];
             case 1:
@@ -62,7 +61,7 @@ var getUserDetails = function (id) { return __awaiter(_this, void 0, void 0, fun
                 return [4 /*yield*/, res.json()];
             case 2:
                 data = _a.sent();
-                localStorage.setItem("details", JSON.stringify(data.data));
+                localStorage.setItem("details", JSON.stringify(data));
                 _a.label = 3;
             case 3: return [3 /*break*/, 5];
             case 4:
@@ -76,7 +75,6 @@ var getUserDetails = function (id) { return __awaiter(_this, void 0, void 0, fun
 function showData(data) {
     var tableBody = document.getElementById("table-body");
     tableBody.innerHTML = data.map(function (item) {
-        console.log("vbb", item);
         return "\n          <tr class=\"table-row\">\n              <td>".concat(item.name, "</td>\n              <td>").concat(item.marksObitained, "</td>\n              <td>").concat(item.max, "</td>\n            </tr>\n          ");
     }).join("");
 }

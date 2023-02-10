@@ -29,7 +29,8 @@ subform.addEventListener("submit", function (e) {
         payload.push({
             name: subject_name[i],
             marksObitained: subject_marks[i],
-            max: max_marks[0]
+            max: max_marks[0],
+            userId: Number(user.id) 
         })
     }
    

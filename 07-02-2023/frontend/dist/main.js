@@ -50,18 +50,18 @@ var loadFile = function (event) {
 };
 var form = document.querySelector("#student-form");
 form.addEventListener("submit", function (e) { return __awaiter(_this, void 0, void 0, function () {
-    var formData, arr, validation, payload, res, body, userId, input, file, fd, res_1, err_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
+    var formData, arr, validation, payload, res, body, userId, input, file, fd, result, _a, _b, _c, x, err_1;
+    return __generator(this, function (_d) {
+        switch (_d.label) {
             case 0:
                 e.preventDefault();
-                _a.label = 1;
+                _d.label = 1;
             case 1:
-                _a.trys.push([1, 6, , 7]);
+                _d.trys.push([1, 8, , 9]);
                 formData = new FormData(form);
                 arr = Array.from(formData.entries());
                 validation = vaidateFormInput(arr);
-                if (!(validation.status === 200)) return [3 /*break*/, 5];
+                if (!(validation.status === 200)) return [3 /*break*/, 7];
                 payload = {
                     first_name: arr[0][1],
                     last_name: arr[1][1],
@@ -79,40 +79,46 @@ form.addEventListener("submit", function (e) { return __awaiter(_this, void 0, v
                         },
                     })];
             case 2:
-                res = _a.sent();
+                res = _d.sent();
+                if (!(res.status === 200)) return [3 /*break*/, 7];
                 return [4 /*yield*/, res.json()];
             case 3:
-                body = _a.sent();
-                console.log(body);
-                if (!(body.status === 200)) return [3 /*break*/, 5];
+                body = _d.sent();
+                localStorage.setItem("User", JSON.stringify(body.data));
                 userId = body.data.id;
-                input = document.querySelector('#input'), file = input.files[0];
+                input = document.querySelector("#input"), file = input.files[0];
                 if (!file || !file.type.match(/image.*/))
                     throw {
                         status: 404,
-                        message: "Please upload Image."
+                        message: "Please upload Image.",
                     };
                 fd = new FormData();
                 fd.append("testImg", file);
-                fd.append("userId", userId);
-                return [4 /*yield*/, fetch('http://localhost:3000/upload', {
-                        method: 'POST',
+                return [4 /*yield*/, fetch("http://localhost:3000/upload/".concat(userId), {
+                        method: "POST",
                         body: fd,
                     })];
             case 4:
-                res_1 = _a.sent();
-                if (res_1.status === 200) {
-                    localStorage.setItem("User", JSON.stringify(body.data));
-                    document.getElementById("message-res").innerHTML = "User Regsirtation Successfull";
-                    form.reset();
-                }
-                _a.label = 5;
-            case 5: return [3 /*break*/, 7];
+                result = _d.sent();
+                _b = (_a = console).log;
+                _c = ["image"];
+                return [4 /*yield*/, result.json()];
+            case 5:
+                _b.apply(_a, _c.concat([_d.sent()]));
+                if (!(result.status === 200)) return [3 /*break*/, 7];
+                return [4 /*yield*/, result.json()];
             case 6:
-                err_1 = _a.sent();
+                x = _d.sent();
+                document.getElementById("message-res").innerHTML =
+                    "User Regsirtation Successfull";
+                form.reset();
+                _d.label = 7;
+            case 7: return [3 /*break*/, 9];
+            case 8:
+                err_1 = _d.sent();
                 console.log(err_1);
-                return [3 /*break*/, 7];
-            case 7: return [2 /*return*/];
+                return [3 /*break*/, 9];
+            case 9: return [2 /*return*/];
         }
     });
 }); });

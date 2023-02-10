@@ -1,0 +1,12 @@
+POST  http://localhost:5050/api/user/login
+Content-Type: application/json
+
+{
+    "email":"cappool@gmail.com",
+    "password":"Smmck@123"
+}
+
+###
+
+GET http://localhost:5050/api/user/getPost
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJpYXQiOjE2NzYwMzM3MjMsImV4cCI6MTY3NjAzMzc4M30.a2wx-o9ErT8ulv-KGSJX2XfZyy1bx66iaazUMKsS-RY

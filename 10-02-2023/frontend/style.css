@@ -1,0 +1,85 @@
+/** Global SCSS **/
+/** Global SCSS **/
+/** Page SCSS**/
+#container {
+    max-width: 60%;
+    margin: 25px auto;
+  }
+  #container h1 {
+    text-align: center;
+  }
+  
+  #form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px auto;
+    width: 30vw;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* Pseudo Class hover, active */
+  }
+  #form button {
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    background-color: teal;
+    color: #eee;
+    font-weight: 700;
+    max-width: 200px;
+    margin: 5px auto;
+  }
+  #form button:hover {
+    color: black;
+    background: pink;
+    cursor: pointer;
+  }
+  #form button:active {
+    background: transparent;
+    color: black;
+  }
+  
+  .form-element {
+    display: flex;
+    flex-direction: column;
+    margin: 5px auto;
+    padding: 10px 0;
+    width: 25vw;
+    /*  Pesudo Element (*) Added After Label */
+    /*  Pseudo Class Focus */
+  }
+  .form-element .required {
+    padding: 3px 0;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+  }
+  .form-element .required::after {
+    content: "*";
+    color: red;
+  }
+  .form-element input, select {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid teal;
+    opacity: 0.5;
+    padding: 5px;
+    letter-spacing: 0.05em;
+  }
+  .form-element input:focus {
+    box-shadow: rgba(0, 0, 0, 0.05) 1px 1px 0px 0px, rgb(209, 213, 219) 1px 1px 0px 0px inset;
+  }
+  
+  #password-element {
+    position: relative;
+  }
+  #password-element i {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 15px 5px;
+    color: teal;
+  }
+  #password-element i:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+    color: black;
+  }/*# sourceMappingURL=style.css.map */
