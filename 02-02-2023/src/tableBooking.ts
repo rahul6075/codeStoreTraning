@@ -161,7 +161,7 @@ const service2 = new Service(
 );
 const service3 = new Service(3, "Lunch", "Formal", 5000, "It a luch service.");
 // Create Restorant
-const restorant = new Restorant("0145", 0, [], []);
+const restorant = new Restorant("0145", 5, [], []);
 // Add services to restorant
 restorant.addServceToRestorant(service1);
 restorant.addServceToRestorant(service2);

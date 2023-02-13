@@ -94,7 +94,7 @@ var service1 = new Service(1, "Dining", "Date Dinner", 10000, "It a special dine
 var service2 = new Service(2, "Dining", "Business Dinner", 50000, "It a special diner menu for Business.");
 var service3 = new Service(3, "Lunch", "Formal", 5000, "It a luch service.");
 // Create Restorant
-var restorant = new Restorant("0145", 0, [], []);
+var restorant = new Restorant("0145", 5, [], []);
 // Add services to restorant
 restorant.addServceToRestorant(service1);
 restorant.addServceToRestorant(service2);

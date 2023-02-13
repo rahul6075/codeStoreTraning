@@ -27,6 +27,8 @@ pool.getConnection(function (err, conn) {
 // Routes
 app.use('/api/user', require('./routes/userRoutes'))
 
+
+// Test Route
 app.get("/test", (req, res) => {
   res.json({
     message: "Api is running.",

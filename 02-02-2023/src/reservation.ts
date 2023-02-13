@@ -9,14 +9,14 @@ window.addEventListener("load", () =>{
           <tr class="table-row" key=${item.id}>
           <td>${item.id}</td>
           <td>${item.first_name} </td>
-          <td>${item.last_name}</td>
+          <td>${item.contact}</td>
           <td>${item.email}</td>
           <td>${item.attendies}</td>
           <td>${item.booking_date}</td>
           <td>${item.booking_time}</td>
           <td>${item.table_number}</td>
-          <td>${item.status}</td>
+          <td>${item.status === 0 ? "Booked": "Completed" }</td>
         </tr> 
-          `
+             `
     }).join(""); 
 })
