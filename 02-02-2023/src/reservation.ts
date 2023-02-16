@@ -19,4 +19,4 @@ window.addEventListener("load", () =>{
         </tr> 
              `
     }).join(""); 
-})
+});

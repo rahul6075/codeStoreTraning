@@ -141,7 +141,6 @@ class Restorant {
   checkAvalibity(){
       return this._noOfTables;
   }
-  
 }
 
 // Create Services

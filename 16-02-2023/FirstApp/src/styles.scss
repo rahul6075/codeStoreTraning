@@ -1,0 +1,115 @@
+/* You can add global styles to this file, and also import other style files */
+/** google fonts **/
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Hind:wght@300;400;500;600;700&family=Maven+Pro:wght@400;600;700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Ubuntu:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arvo", serif;
+  font-family: "Hind", sans-serif;
+  font-family: "Maven Pro", sans-serif;
+  font-family: "Roboto Mono", monospace;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/** Variables **/
+$base_color_light_mode: teal;
+$bg_color_light_mode: #ffff;
+$base_color_dark_mode: #eee;
+$bg_color_dark_mode: #232323;
+$black_color_light: #192a56;
+$grey1: #e6eae4;
+$grey2: #e5eae4;
+$white: #fdfcfa;
+$yellow: #e7ba52;
+$yellow2: #deb543;
+$yello_text_color: #e1dec4;
+$heading_color: #43423f;
+$btn_color: #3c8879;
+
+// Radius
+$circle: 50%;
+$round: 25px;
+
+// shadows
+$input_shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+$card_shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+/** global Styles for body **/
+@keyframes blinker {
+  70% {
+    opacity: 0.3;
+  }
+}
+
+body {
+  background: $bg_color_light_mode;
+  color: $base_color_light_mode;
+}
+a {
+  text-decoration: none;
+  color: $heading_color;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 0.5rem 0.7rem;
+}
+a:hover {
+  animation: blinker 1s linear infinite;
+}
+input {
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+li {
+  text-decoration: none;
+}
+h3 {
+  color: $bg_color_dark_mode;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+p {
+  color: $heading_color;
+  opacity: 0.8;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  background-color: $btn_color;
+  border-radius: 25px;
+  text-transform: capitalize;
+  span {
+    color: $base_color_dark_mode;
+    padding: 0 0.3rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+}
+
+select {
+  border: none;
+  outline: none;
+  margin-right:2rem;
+  max-width: 20rem;
+  padding: 0 0.8rem;
+  option{
+    text-decoration: none;
+     background: $base_color_dark_mode;
+     padding: 1vh 1vw;
+
+  }
+}
+.border{
+  border-right: 1px solid $black_color_light;
+  margin: 0 1rem;
+}
+
+
+  

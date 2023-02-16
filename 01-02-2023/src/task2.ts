@@ -62,8 +62,6 @@ abstract class TakePhoto{
     }
 }
 
-
-
 class Instagram extends TakePhoto{
      constructor(public cameraMode: string, public filter:string, public burst:number){
         super(cameraMode, filter);

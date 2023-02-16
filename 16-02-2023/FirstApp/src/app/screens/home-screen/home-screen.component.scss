@@ -1,0 +1,17 @@
+@import '../../../styles.scss';
+
+#header-section{
+    // background: $grey1;
+    position: sticky;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid $grey1; 
+}
+#hero-section{
+    background-size: cover;
+    background: url('../../../assets/bg.webp') no-repeat fixed;
+}
+#services-section{
+     height: 40vh;
+     background: transparent;
+}

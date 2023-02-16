@@ -1,0 +1,11 @@
+@import '../../../styles.scss';
+.service-card{
+     display: flex;
+     flex-direction: column;
+     max-width: 28rem;
+     box-shadow: $card_shadow;
+     img{
+        object-fit: fill;
+        height: 21rem;
+     }
+}
