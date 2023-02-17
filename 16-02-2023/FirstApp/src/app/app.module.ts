@@ -14,6 +14,9 @@ import { ServiceCardComponent } from './componenets/service-card/service-card.co
 import { MenuCardComponent } from './componenets/menu-card/menu-card.component';
 import { ContactSectionComponent } from './componenets/contact-section/contact-section.component';
 import { FooterComponent } from './componenets/footer/footer.component';
+import { ReviewsComponent } from './componenets/reviews/reviews.component';
+import { ReviewCardComponent } from './componenets/review-card/review-card.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -30,10 +33,13 @@ import { FooterComponent } from './componenets/footer/footer.component';
     ServiceCardComponent,
     MenuCardComponent,
     ContactSectionComponent,
-    FooterComponent
+    FooterComponent,
+    ReviewsComponent,
+    ReviewCardComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

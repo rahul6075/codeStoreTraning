@@ -1,17 +1,42 @@
-@import '../../../styles.scss';
+@import "../../../styles.scss";
 
-#header-section{
-    // background: $grey1;
-    position: sticky;
-    top: 0;
-    left: 0;
-    border-bottom: 1px solid $grey1; 
+#hero-section {
+  background-size: cover;
+  background: url("../../../assets/bg.webp") no-repeat fixed;
 }
-#hero-section{
-    background-size: cover;
-    background: url('../../../assets/bg.webp') no-repeat fixed;
+#services-section {
+  height: auto;
+  background: transparent;
 }
-#services-section{
-     height: 40vh;
-     background: transparent;
+#reviews {
+  height: auto;
+  background: $base_color_light_mode;
+  h1 {
+    padding: 1rem 0;
+    color: white;
+  }
+  .cards {
+    max-width: 90%;
+    margin: 0rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 2vh;
+  }
+}
+#contact {
+  height: auto;
+  background: $grey1;
+  .contact-form {
+    max-width: 90%;
+    margin: 0vh auto;
+    padding: 2vh 0;
+  }
+}
+
+#footer-section{
+   background-color: #F7F7F7;
+   color: $heading_color;
+   padding: 2vh 0;
 }

@@ -1,0 +1,130 @@
+@import "../../../styles.scss";
+#review-card {
+  .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    .front {
+      position: absolute;
+      top: 0;
+      z-index: $zidx;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 20rem;
+      border: 1px solid $grey2;
+      padding: 0.5rem;
+      background: $bg_color_light_mode;
+      border-radius: 8px;
+      height: 22rem;
+      .product {
+        margin: 1vh auto;
+        img {
+          width: 10rem;
+          height: 10rem;
+          line-height: 10rem;
+          object-fit: cover;
+          border: 1px solid $grey2;
+          border-radius: $circle;
+        }
+      }
+      .ratings {
+        display: flex;
+        justify-content: space-between;
+        margin: 1vh 0;
+        .icons {
+          display: flex;
+          padding: 0 3px;
+          img {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+          }
+        }
+      }
+      p {
+        margin: 1vh 0;
+        opacity: 0.5;
+        font-size: 14px;
+      }
+      button {
+        border: none;
+        outline: none;
+        width: 8rem;
+        padding: 1vh 0;
+        margin: 1.5vh auto;
+        background-color: $yellow2;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    }
+    .back {
+      position: relative;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 20rem;
+      border: 1px solid $grey2;
+      padding: 0.5rem;
+      background: $bg_color_light_mode;
+      border-radius: 8px;
+      height: 22rem;
+      .back-content {
+        p {
+          font-size: 14px;
+          opacity: 0.6;
+          margin: 1vh 0;
+          padding: 0.5rem;
+        }
+        .location {
+          margin: 1vh 0;
+          display: flex;
+          align-items: center;
+          img {
+            width: 25px;
+            height: 25px;
+            line-height: 15px;
+            object-fit: cover;
+            background-color: $grey2;
+            border-radius: $circle;
+            padding: 2;
+          }
+        }
+        .author {
+          display: flex;
+          align-items: center;
+          border: 1px solid $yellow2;
+          border-radius: 25px;
+          img {
+            width: 30px;
+            height: 30px;
+            line-height: 25px;
+            object-fit: cover;
+          }
+          .name {
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            .auth {
+              color: $heading_color;
+            }
+            .desc {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .content:hover {
+    .front {
+      z-index: 0;
+    }
+  }
+}

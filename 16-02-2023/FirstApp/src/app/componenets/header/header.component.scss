@@ -8,6 +8,7 @@
   .left {
     float: left;
     display: flex;
+    align-items: center;
     img {
       width: 18px;
       height: 18px;
@@ -39,13 +40,28 @@
           padding: 0 1rem;
         }
         .auth {
-            background-color: $base_color_light_mode;
-            margin: 0 0.2rem;
-            border-radius: $round;
-            padding: 0.5rem 0;
-            a{
-              color: $bg_color_light_mode;
-            }
+          background-color: $base_color_light_mode;
+          margin: 0 0.2rem;
+          border-radius: $round;
+          padding: 0.5rem 0;
+          a {
+            color: $bg_color_light_mode;
+          }
+        }
+      }
+    }
+  }
+}
+/** Media Quries for mobile Section **/
+@include responsive($med) {
+  #header {
+    .right {
+      .nav-items {
+        ul {
+          display: block;
+          li {
+            display: block;
+          }
         }
       }
     }

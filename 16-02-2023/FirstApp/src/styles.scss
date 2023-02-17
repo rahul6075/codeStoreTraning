@@ -27,7 +27,7 @@ $yellow2: #deb543;
 $yello_text_color: #e1dec4;
 $heading_color: #43423f;
 $btn_color: #3c8879;
-
+$zidx: 1;
 // Radius
 $circle: 50%;
 $round: 25px;
@@ -35,6 +35,22 @@ $round: 25px;
 // shadows
 $input_shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 $card_shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+// Medial Quries
+$xl: 1200px; // 4k and hi-res desktop
+$lg: 992px; // 1080 and hi-res laptops
+$med: 768px; // hi-res tablets and low-res laptops
+$sm: 576px; // mobile and low-res tablets
+
+/** Responsive Media Query Mixin **/
+@mixin responsive($query) {
+  @media (max-width: $query) {
+    @content;
+  }
+}
+@mixin content($val) {
+  $zidx : $val;
+}
 /** global Styles for body **/
 @keyframes blinker {
   70% {
@@ -64,11 +80,15 @@ input {
 li {
   text-decoration: none;
 }
-h3 {
-  color: $bg_color_dark_mode;
+h1{
   font-size: 25px;
   font-weight: 700;
   letter-spacing: 0.03em;
+}
+h3 {
+  color: $bg_color_dark_mode;
+  letter-spacing: 0.03em;
+  opacity: 0.8;
 }
 
 p {
@@ -81,10 +101,12 @@ p {
 .btn {
   display: flex;
   align-items: center;
-  padding: 0 0.5rem;
+  justify-content: space-between;
   background-color: $btn_color;
   border-radius: 25px;
   text-transform: capitalize;
+  margin: 0 auto;
+  padding: 0rem 1rem;
   span {
     color: $base_color_dark_mode;
     padding: 0 0.3rem;
@@ -92,7 +114,6 @@ p {
     letter-spacing: 0.03em;
   }
 }
-
 select {
   border: none;
   outline: none;
@@ -111,5 +132,17 @@ select {
   margin: 0 1rem;
 }
 
+.section-heading{
+    text-align: center;
+    color: $heading_color;
+    font-weight: 700;
+    margin: 3vh 0;
+    text-transform: uppercase;
+}
+.text-center{
+  text-align: center;
+}
 
-  
+ul{
+  list-style: none;
+}

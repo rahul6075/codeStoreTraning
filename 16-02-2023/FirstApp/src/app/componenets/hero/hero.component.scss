@@ -21,6 +21,7 @@
             opacity: 0.8;
             padding: 1vh 0;
             font-size: 35px;
+            text-transform: capitalize;
         }
         p{
             color: $yellow2;
@@ -28,11 +29,9 @@
       }
     }
     .form-control {
-      display: flex;
-      align-items: center;
       form {
         display: flex;
-        padding: 0.5rem;
+        padding: 0.5rem 0.2rem;
         border: 1px solid $grey2;
         background-color: white;
         border-radius: 25px;
@@ -49,11 +48,16 @@
             border-radius: 25px;
           }
           input {
-            padding: 0 0.5rem;
+            padding: 0 0.1rem;
             letter-spacing: 0.03em;
             margin: 0 0.5rem;
           }
         }
+        .text{
+          width: 100%;
+          text-align: center;
+          margin: 0 auto;
+      }
       }
     }
   }
@@ -62,11 +66,12 @@
     overflow: auto;
     .slider {
       display: flex;
-      gap: 2rem;
-      overflow-x: scroll;
+      justify-content: center;
       .img-ele {
         img{
-            object-fit: cover;
+            height: 40vh;
+            width: 40vw;
+            object-fit: contain;
         }
       }
     }
@@ -87,5 +92,54 @@
           border-radius: $circle;
        }
     }
+  }
+}
+
+/** Media Quries for mobile Section **/
+@include responsive($xl){
+  #hero{
+   .left{
+      flex: 3;
+   }
+   .right{
+      flex: 9;
+   }
+}
+}
+@include responsive($lg) {
+  #hero{
+      padding: 2vh 0;
+     flex-direction: column;
+     .left{
+        
+        .form-control{
+          form{
+             flex-direction: column;
+             .form-element{
+                 margin: .5rem;
+                 border: 1px solid $black_color_light;
+                 padding: 5px;
+                 border-radius: 25px;
+                  img{
+
+                  }
+                  input{
+                      padding: 0;
+                  }
+                  .border{
+                     display: none;
+                  }
+                  
+             }
+             .text{
+                 width: 100%;
+                 text-align: center;
+             }
+          }
+        }
+     }
+     .right{
+        
+     }
   }
 }
